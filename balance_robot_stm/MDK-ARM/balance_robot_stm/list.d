@@ -1,0 +1,12 @@
+balance_robot_stm\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
+balance_robot_stm\list.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+balance_robot_stm\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+balance_robot_stm\list.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+balance_robot_stm\list.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+balance_robot_stm\list.o: ../Core/Inc/FreeRTOSConfig.h
+balance_robot_stm\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+balance_robot_stm\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+balance_robot_stm\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+balance_robot_stm\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+balance_robot_stm\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+balance_robot_stm\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
