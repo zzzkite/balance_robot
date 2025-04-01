@@ -1,0 +1,63 @@
+function K = get_k_length(leg_length)
+   
+    %theta : 摆杆与竖直方向夹角             R   ：驱动轮半径
+    %x     : 驱动轮位移                    L   : 摆杆重心到驱动轮轴距离
+    %phi   : 机体与水平夹角                LM  : 摆杆重心到其转轴距离
+    %T     ：驱动轮输出力矩                 l   : 机体重心到其转轴距离
+    %Tp    : 髋关节输出力矩                 mw  : 驱动轮转子质量
+    %N     ：驱动轮对摆杆力的水平分量        mp  : 摆杆质量
+    %P     ：驱动轮对摆杆力的竖直分量        M   : 机体质量
+    %Nm    ：摆杆对机体力水平方向分量        Iw  : 驱动轮转子转动惯量
+    %Pm    ：摆杆对机体力竖直方向分量        Ip  : 摆杆绕质心转动惯量
+    %Nf    : 地面对驱动轮摩擦力             Im  : 机体绕质心转动惯量
+
+    R1=0.129/2;                         %驱动轮半径
+    L1=double(leg_length/2);                  %摆杆重心到驱动轮轴距离
+    Lm1=double(leg_length/2);                 %摆杆重心到其关节转轴距离
+    l1=0.103;                          %机体质心到关节转轴距离
+    mw1=0.6;                         %驱动轮质量
+    mp1=0.06;                         %杆总质量
+    M1=1.5;                          %机体质量
+    Iw1=mw1*R1^2;                     %驱动轮转动惯量
+    Ip1=mp1*(Lm1^2+l1^2)/12.0 + mp1*(0.0725+0.16)^2; %摆杆绕质心的转动惯量
+    Im1=M1*(0.206^2+0.186^2)/12.0;       %机体绕质心转动惯量
+    g1=9.8; %重力加速度g
+   
+    syms R L Lm l mw mp M Iw Ip Im g
+    syms T Tp
+    syms f1 f2 f3 theta theta1 theta2 x x1 x2 phi phi1 phi2
+    syms Nm N Pm P
+
+% 力平衡方程变式 -> 消去4个中间变量
+Nm=M*{x2+(L+Lm)*(-theta1*sin(theta)+theta2*cos(theta))-l*(-phi1*sin(phi)+phi2*cos(phi))};
+N=mp*{x2+L*(-theta1*sin(theta)+theta2*cos(theta))}+Nm;
+Pm=M*g+M*{(L+Lm)*(-theta2*sin(theta)-theta1*cos(theta))+l*(-phi2*sin(phi)-phi1*cos(phi))};
+P=Pm+mp*g+mp*L*(-theta2*sin(theta)-theta1*cos(theta));
+
+% 力矩平衡方程，用来求解符号表达式
+f1 = x2==(T-N*R)/(Iw/R+mw*R);
+f2 = Ip*theta2==(P*L+Pm*Lm)*sin(theta)-(N*L+Nm*Lm)*cos(theta)-T+Tp;
+f3 = Im*phi2==Tp+Nm*l*cos(phi)+Pm*l*sin(phi);
+
+% 构建方程组进行解耦，得到theta2，x2和phi2的符号表达式
+equ=[f1,f2,f3];
+ans_dott=solve(equ,[theta2 x2 phi2]);
+
+% 构建状态变量
+z=[theta theta1 x x1 phi phi1]';
+u=[T Tp]';
+
+% 求解jacobi，用表达式对状态变量求偏导，并代入平衡点的表达式得到线性化后的jacobian
+A = jacobian([theta1 ans_dott.theta2 x1 ans_dott.x2 phi1 ans_dott.phi2],z');
+B = jacobian([theta1 ans_dott.theta2 x1 ans_dott.x2 phi1 ans_dott.phi2],u');
+A=subs(A,{theta theta1 x1 phi phi1 T Tp mp mw M Iw Ip Im R l L Lm g},{0 0 0 0 0 0 0 mp1 mw1 M1 Iw1 Ip1 Im1 R1 l1 L1 Lm1 g1});
+B=subs(B,{theta theta1 x1 phi phi1 T Tp mp mw M Iw Ip Im R l L Lm g},{0 0 0 0 0 0 0 mp1 mw1 M1 Iw1 Ip1 Im1 R1 l1 L1 Lm1 g1});
+A=double(A);
+B=double(B);
+
+% LQR控制器计算
+Q=diag([1 1 500 100 5000 1]);%theta d_theta x d_x phi d_phi%700 1 600 200 1000 1
+R=[160 0;0 10];          
+K = lqr(A,B,Q,R);
+
+end
