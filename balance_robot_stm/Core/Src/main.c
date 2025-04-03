@@ -109,6 +109,7 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 	DWT_Init(480); 
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
 	while (BMI088_init(&hspi2, 0) != BMI088_NO_ERROR) // 0为不校准，1为进入校准模式
 	{
 	  ;

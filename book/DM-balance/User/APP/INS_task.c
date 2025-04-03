@@ -42,6 +42,8 @@ void INS_task(void)
 	 
 	 while(1)
 	 {  
+		 
+		//获取时间差分
 		ins_dt = DWT_GetDeltaT(&INS_DWT_Count);
     
 		mahony.dt = ins_dt;

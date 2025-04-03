@@ -4,11 +4,11 @@
 #include "gpio.h"
 #include "tim.h"
 
-#define DES_TEMP    40.0f
-#define KP          100.f
-#define KI          50.f
+#define DES_TEMP    41.0f
+#define KP          10000.f
+#define KI          1000.f
 #define KD          10.f
-#define MAX_OUT     500
+#define MAX_OUT     100000
 
 float gyro[3], accel[3], temp;
 uint8_t forceStop = 0;
@@ -36,7 +36,7 @@ void IMU_TempCtrlTask(void const * argument)
     }
     for (;;)
     {
-        osSemaphoreWait(imuBinarySem01Handle, osWaitForever);
+        osSemaphoreWait(imuBinarySem01Handle, osWaitForever);// 挂起，等待信号量
         
         BMI088_read(gyro, accel, &temp);
         err_ll = err_l;
@@ -45,7 +45,6 @@ void IMU_TempCtrlTask(void const * argument)
         out = KP*err + KI*(err + err_l + err_ll) + KD*(err - err_l);
         if (out > MAX_OUT) out = MAX_OUT;
         if (out < 0) out = 0.f;
-        
         if (forceStop == 1)
         {
             out = 0.0f;
@@ -66,7 +65,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if(GPIO_Pin == ACC_INT_Pin)
     {
-        osSemaphoreRelease(imuBinarySem01Handle);
+        osSemaphoreRelease(imuBinarySem01Handle);// 释放信号量
     }
     else if(GPIO_Pin == GYRO_INT_Pin)
     {

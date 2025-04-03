@@ -30,6 +30,18 @@ float ins_dt = 0.0f;
 float ins_time;
 int stop_time;
 
+//加热IMU
+#define IMU_DES_TEMP    40.0f
+#define IMU_KP          10000.f
+#define IMU_KI          1500.f
+#define IMU_KD          10.f
+#define IMU_MAX_OUT     100000
+float out = 0;
+float err = 0;
+float err_l = 0;
+float err_ll = 0;
+uint8_t forceStop = 0;
+
 void INS_Init(void)
 { 
 	 mahony_init(&mahony,1.0f,0.0f,0.001f);//初始化Mahony滤波器的参数和函数指针
@@ -126,6 +138,19 @@ void INS_task(void)
 		 ins_time++;
 		}
 		
+		//加热IMU
+		err_ll = err_l;
+    err_l = err;
+    err = IMU_DES_TEMP - BMI088.Temperature;
+    out = IMU_KP*err + IMU_KI*(err + err_l + err_ll) + IMU_KD*(err - err_l);
+    if (out > IMU_MAX_OUT) out = IMU_MAX_OUT;
+    if (out < 0) out = 0.f;
+    if (forceStop == 1)
+    {
+       out = 0.0f;
+    }
+        
+    htim3.Instance->CCR4 = (uint16_t)out;
     osDelay(1);
 	}
 } 
