@@ -1,10 +1,10 @@
 Dependencies for Project 'balance_robot_stm', Target 'balance_robot_stm': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (startup_stm32h723xx.s)(0x67EB8FF4)(--cpu Cortex-M7.fp.dp -g --apcs=interwork -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include--pd "__UVISION_VERSION SETA 539" --pd "_RTE_ SETA 1" --pd "STM32H723xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32h723xx.lst --xref -o balance_robot_stm\startup_stm32h723xx.o --depend balance_robot_stm\startup_stm32h723xx.d)
-F (../Core/Src/main.c)(0x67EB9569)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\main.o --omf_browse balance_robot_stm\main.crf --depend balance_robot_stm\main.d)
-I (../Core/Inc/main.h)(0x67EB8FF2)
+F (startup_stm32h723xx.s)(0x67ECEB35)(--cpu Cortex-M7.fp.dp -g --apcs=interwork -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include--pd "__UVISION_VERSION SETA 539" --pd "_RTE_ SETA 1" --pd "STM32H723xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32h723xx.lst --xref -o balance_robot_stm\startup_stm32h723xx.o --depend balance_robot_stm\startup_stm32h723xx.d)
+F (../Core/Src/main.c)(0x67EDE4D4)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\main.o --omf_browse balance_robot_stm\main.crf --depend balance_robot_stm\main.d)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -35,6 +35,8 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67EB8DE5)
@@ -51,17 +53,23 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67EB8DE5)
-I (../Core/Inc/fdcan.h)(0x67EB8FF1)
+I (../Core/Inc/dma.h)(0x67ECAFB5)
+I (../Core/Inc/fdcan.h)(0x67ECAFB5)
 I (../Core/Inc/memorymap.h)(0x67EB8FF2)
-I (../Core/Inc/gpio.h)(0x67EB8FF0)
-I (..\Lib\Inc\bsp_can.h)(0x67EB9879)
-I (..\Lib\Inc\Motor.h)(0x67EBA62E)
+I (../Core/Inc/spi.h)(0x67ECAFB6)
+I (../Core/Inc/tim.h)(0x67ECAFB6)
+I (../Core/Inc/gpio.h)(0x67ECE0CA)
+I (../User/Bsp/bsp_can.h)(0x67ECDDAB)
+I (../User/Bsp/bsp_dwt.h)(0x67DEC9B1)
+I (../User/Device/BMI088driver.h)(0x67ED08BD)
+I (../User/Device/BMI088Middleware.h)(0x67DEC9B1)
+I (../User/Device/Motor.h)(0x67EBA62E)
 I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-F (../Core/Src/gpio.c)(0x67EB8FF0)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\gpio.o --omf_browse balance_robot_stm\gpio.crf --depend balance_robot_stm\gpio.d)
-I (../Core/Inc/gpio.h)(0x67EB8FF0)
-I (../Core/Inc/main.h)(0x67EB8FF2)
+F (../Core/Src/gpio.c)(0x67ECB103)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\gpio.o --omf_browse balance_robot_stm\gpio.crf --depend balance_robot_stm\gpio.d)
+I (../Core/Inc/gpio.h)(0x67ECE0CA)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -92,9 +100,11 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Core/Src/freertos.c)(0x67EB8FF1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\freertos.o --omf_browse balance_robot_stm\freertos.crf --depend balance_robot_stm\freertos.d)
+F (../Core/Src/freertos.c)(0x67ECE2AE)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\freertos.o --omf_browse balance_robot_stm\freertos.crf --depend balance_robot_stm\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -106,9 +116,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
-I (../Core/Inc/main.h)(0x67EB8FF2)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -137,6 +147,8 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67EB8DE5)
@@ -144,11 +156,19 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67EB8DE5)
-F (../Core/Src/fdcan.c)(0x67EB8FF1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\fdcan.o --omf_browse balance_robot_stm\fdcan.crf --depend balance_robot_stm\fdcan.d)
-I (../Core/Inc/fdcan.h)(0x67EB8FF1)
-I (../Core/Inc/main.h)(0x67EB8FF2)
+I (../User/Task/ins_task.h)(0x67DEC9B1)
+I (../User/Device/BMI088driver.h)(0x67ED08BD)
+I (../User/Algorithm/QuaternionEKF.h)(0x67ECF5AB)
+I (../User/Algorithm/kalman_filter.h)(0x67ECF496)
+I (../Drivers/CMSIS/DSP/Include/arm_math.h)(0x67EB8DEA)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+F (../Core/Src/dma.c)(0x67ECAFB5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\dma.o --omf_browse balance_robot_stm\dma.crf --depend balance_robot_stm\dma.d)
+I (../Core/Inc/dma.h)(0x67ECAFB5)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -179,13 +199,54 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Core/Src/memorymap.c)(0x67EB8FF1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\memorymap.o --omf_browse balance_robot_stm\memorymap.crf --depend balance_robot_stm\memorymap.d)
+F (../Core/Src/fdcan.c)(0x67ECAFB5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\fdcan.o --omf_browse balance_robot_stm\fdcan.crf --depend balance_robot_stm\fdcan.d)
+I (../Core/Inc/fdcan.h)(0x67ECAFB5)
+I (../Core/Inc/main.h)(0x67ECB105)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+F (../Core/Src/memorymap.c)(0x67EB8FF1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\memorymap.o --omf_browse balance_robot_stm\memorymap.crf --depend balance_robot_stm\memorymap.d)
 I (../Core/Inc/memorymap.h)(0x67EB8FF2)
-I (../Core/Inc/main.h)(0x67EB8FF2)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -216,12 +277,15 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Core/Src/stm32h7xx_it.c)(0x67EB8FF2)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_it.o --omf_browse balance_robot_stm\stm32h7xx_it.crf --depend balance_robot_stm\stm32h7xx_it.d)
-I (../Core/Inc/main.h)(0x67EB8FF2)
+F (../Core/Src/spi.c)(0x67ECAFB5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\spi.o --omf_browse balance_robot_stm\spi.crf --depend balance_robot_stm\spi.d)
+I (../Core/Inc/spi.h)(0x67ECAFB6)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -252,13 +316,15 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_it.h)(0x67EB8FF2)
-F (../Core/Src/stm32h7xx_hal_msp.c)(0x67EB8FF2)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_msp.o --omf_browse balance_robot_stm\stm32h7xx_hal_msp.crf --depend balance_robot_stm\stm32h7xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x67EB8FF2)
+F (../Core/Src/tim.c)(0x67ECAFB6)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\tim.o --omf_browse balance_robot_stm\tim.crf --depend balance_robot_stm\tim.d)
+I (../Core/Inc/tim.h)(0x67ECAFB6)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -289,11 +355,14 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Core/Src/stm32h7xx_hal_timebase_tim.c)(0x67EB8FF2)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_timebase_tim.o --omf_browse balance_robot_stm\stm32h7xx_hal_timebase_tim.crf --depend balance_robot_stm\stm32h7xx_hal_timebase_tim.d)
+F (../Core/Src/stm32h7xx_it.c)(0x67ECAFB6)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_it.o --omf_browse balance_robot_stm\stm32h7xx_it.crf --depend balance_robot_stm\stm32h7xx_it.d)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -324,11 +393,15 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_tim.o --omf_browse balance_robot_stm\stm32h7xx_hal_tim.crf --depend balance_robot_stm\stm32h7xx_hal_tim.d)
+I (../Core/Inc/stm32h7xx_it.h)(0x67ECAFB6)
+F (../Core/Src/stm32h7xx_hal_msp.c)(0x67EB8FF2)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_msp.o --omf_browse balance_robot_stm\stm32h7xx_hal_msp.crf --depend balance_robot_stm\stm32h7xx_hal_msp.d)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -359,11 +432,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_tim_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_tim_ex.crf --depend balance_robot_stm\stm32h7xx_hal_tim_ex.d)
+F (../Core/Src/stm32h7xx_hal_timebase_tim.c)(0x67ECAFB6)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_timebase_tim.o --omf_browse balance_robot_stm\stm32h7xx_hal_timebase_tim.crf --depend balance_robot_stm\stm32h7xx_hal_timebase_tim.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -394,11 +469,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_cortex.o --omf_browse balance_robot_stm\stm32h7xx_hal_cortex.crf --depend balance_robot_stm\stm32h7xx_hal_cortex.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_tim.o --omf_browse balance_robot_stm\stm32h7xx_hal_tim.crf --depend balance_robot_stm\stm32h7xx_hal_tim.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -429,11 +506,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_fdcan.o --omf_browse balance_robot_stm\stm32h7xx_hal_fdcan.crf --depend balance_robot_stm\stm32h7xx_hal_fdcan.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_tim_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_tim_ex.crf --depend balance_robot_stm\stm32h7xx_hal_tim_ex.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -464,11 +543,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_rcc.o --omf_browse balance_robot_stm\stm32h7xx_hal_rcc.crf --depend balance_robot_stm\stm32h7xx_hal_rcc.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_cortex.o --omf_browse balance_robot_stm\stm32h7xx_hal_cortex.crf --depend balance_robot_stm\stm32h7xx_hal_cortex.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -499,11 +580,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_rcc_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_rcc_ex.crf --depend balance_robot_stm\stm32h7xx_hal_rcc_ex.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_rcc.o --omf_browse balance_robot_stm\stm32h7xx_hal_rcc.crf --depend balance_robot_stm\stm32h7xx_hal_rcc.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -534,11 +617,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_flash.o --omf_browse balance_robot_stm\stm32h7xx_hal_flash.crf --depend balance_robot_stm\stm32h7xx_hal_flash.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_rcc_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_rcc_ex.crf --depend balance_robot_stm\stm32h7xx_hal_rcc_ex.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -569,11 +654,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_flash_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_flash_ex.crf --depend balance_robot_stm\stm32h7xx_hal_flash_ex.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_flash.o --omf_browse balance_robot_stm\stm32h7xx_hal_flash.crf --depend balance_robot_stm\stm32h7xx_hal_flash.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -604,11 +691,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_gpio.o --omf_browse balance_robot_stm\stm32h7xx_hal_gpio.crf --depend balance_robot_stm\stm32h7xx_hal_gpio.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_flash_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_flash_ex.crf --depend balance_robot_stm\stm32h7xx_hal_flash_ex.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -639,11 +728,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_hsem.o --omf_browse balance_robot_stm\stm32h7xx_hal_hsem.crf --depend balance_robot_stm\stm32h7xx_hal_hsem.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_gpio.o --omf_browse balance_robot_stm\stm32h7xx_hal_gpio.crf --depend balance_robot_stm\stm32h7xx_hal_gpio.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -674,11 +765,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_dma.o --omf_browse balance_robot_stm\stm32h7xx_hal_dma.crf --depend balance_robot_stm\stm32h7xx_hal_dma.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_hsem.o --omf_browse balance_robot_stm\stm32h7xx_hal_hsem.crf --depend balance_robot_stm\stm32h7xx_hal_hsem.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -709,11 +802,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_dma_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_dma_ex.crf --depend balance_robot_stm\stm32h7xx_hal_dma_ex.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_dma.o --omf_browse balance_robot_stm\stm32h7xx_hal_dma.crf --depend balance_robot_stm\stm32h7xx_hal_dma.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -744,11 +839,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_mdma.o --omf_browse balance_robot_stm\stm32h7xx_hal_mdma.crf --depend balance_robot_stm\stm32h7xx_hal_mdma.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_dma_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_dma_ex.crf --depend balance_robot_stm\stm32h7xx_hal_dma_ex.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -779,11 +876,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_pwr.o --omf_browse balance_robot_stm\stm32h7xx_hal_pwr.crf --depend balance_robot_stm\stm32h7xx_hal_pwr.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_mdma.o --omf_browse balance_robot_stm\stm32h7xx_hal_mdma.crf --depend balance_robot_stm\stm32h7xx_hal_mdma.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -814,11 +913,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_pwr_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_pwr_ex.crf --depend balance_robot_stm\stm32h7xx_hal_pwr_ex.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_pwr.o --omf_browse balance_robot_stm\stm32h7xx_hal_pwr.crf --depend balance_robot_stm\stm32h7xx_hal_pwr.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -849,11 +950,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal.o --omf_browse balance_robot_stm\stm32h7xx_hal.crf --depend balance_robot_stm\stm32h7xx_hal.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_pwr_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_pwr_ex.crf --depend balance_robot_stm\stm32h7xx_hal_pwr_ex.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -884,11 +987,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_i2c.o --omf_browse balance_robot_stm\stm32h7xx_hal_i2c.crf --depend balance_robot_stm\stm32h7xx_hal_i2c.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal.o --omf_browse balance_robot_stm\stm32h7xx_hal.crf --depend balance_robot_stm\stm32h7xx_hal.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -919,11 +1024,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_i2c_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_i2c_ex.crf --depend balance_robot_stm\stm32h7xx_hal_i2c_ex.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_i2c.o --omf_browse balance_robot_stm\stm32h7xx_hal_i2c.crf --depend balance_robot_stm\stm32h7xx_hal_i2c.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -954,11 +1061,13 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_exti.o --omf_browse balance_robot_stm\stm32h7xx_hal_exti.crf --depend balance_robot_stm\stm32h7xx_hal_exti.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_i2c_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_i2c_ex.crf --depend balance_robot_stm\stm32h7xx_hal_i2c_ex.d)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -989,9 +1098,159 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Core/Src/system_stm32h7xx.c)(0x67EB8F30)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\system_stm32h7xx.o --omf_browse balance_robot_stm\system_stm32h7xx.crf --depend balance_robot_stm\system_stm32h7xx.d)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_exti.o --omf_browse balance_robot_stm\stm32h7xx_hal_exti.crf --depend balance_robot_stm\stm32h7xx_hal_exti.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_fdcan.o --omf_browse balance_robot_stm\stm32h7xx_hal_fdcan.crf --depend balance_robot_stm\stm32h7xx_hal_fdcan.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_spi.o --omf_browse balance_robot_stm\stm32h7xx_hal_spi.crf --depend balance_robot_stm\stm32h7xx_hal_spi.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+F (../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c)(0x67EB8F2F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stm32h7xx_hal_spi_ex.o --omf_browse balance_robot_stm\stm32h7xx_hal_spi_ex.crf --depend balance_robot_stm\stm32h7xx_hal_spi_ex.d)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+F (../Core/Src/system_stm32h7xx.c)(0x67EB8F30)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\system_stm32h7xx.o --omf_browse balance_robot_stm\system_stm32h7xx.crf --depend balance_robot_stm\system_stm32h7xx.d)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
 I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
@@ -1002,7 +1261,7 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
 I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
@@ -1024,9 +1283,11 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\croutine.o --omf_browse balance_robot_stm\croutine.crf --depend balance_robot_stm\croutine.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\croutine.o --omf_browse balance_robot_stm\croutine.crf --depend balance_robot_stm\croutine.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -1039,7 +1300,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h)(0x67EB8DE5)
-F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\event_groups.o --omf_browse balance_robot_stm\event_groups.crf --depend balance_robot_stm\event_groups.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\event_groups.o --omf_browse balance_robot_stm\event_groups.crf --depend balance_robot_stm\event_groups.d)
 I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -1054,7 +1315,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67EB8DE5)
-F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\list.o --omf_browse balance_robot_stm\list.crf --depend balance_robot_stm\list.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\list.o --omf_browse balance_robot_stm\list.crf --depend balance_robot_stm\list.d)
 I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -1066,7 +1327,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(
 I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
-F (../Middlewares/Third_Party/FreeRTOS/Source/queue.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\queue.o --omf_browse balance_robot_stm\queue.crf --depend balance_robot_stm\queue.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/queue.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\queue.o --omf_browse balance_robot_stm\queue.crf --depend balance_robot_stm\queue.d)
 I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
@@ -1081,7 +1342,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67EB8DE5)
-F (../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stream_buffer.o --omf_browse balance_robot_stm\stream_buffer.crf --depend balance_robot_stm\stream_buffer.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\stream_buffer.o --omf_browse balance_robot_stm\stream_buffer.crf --depend balance_robot_stm\stream_buffer.d)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
@@ -1095,7 +1356,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h)(0x67EB8DE5)
-F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\tasks.o --omf_browse balance_robot_stm\tasks.crf --depend balance_robot_stm\tasks.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\tasks.o --omf_browse balance_robot_stm\tasks.crf --depend balance_robot_stm\tasks.d)
 I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
@@ -1111,7 +1372,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h)(0x67EB8DE5)
-F (../Middlewares/Third_Party/FreeRTOS/Source/timers.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\timers.o --omf_browse balance_robot_stm\timers.crf --depend balance_robot_stm\timers.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/timers.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\timers.o --omf_browse balance_robot_stm\timers.crf --depend balance_robot_stm\timers.d)
 I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -1126,7 +1387,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67EB8DE5)
-F (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\cmsis_os.o --omf_browse balance_robot_stm\cmsis_os.crf --depend balance_robot_stm\cmsis_os.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\cmsis_os.o --omf_browse balance_robot_stm\cmsis_os.crf --depend balance_robot_stm\cmsis_os.d)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
@@ -1145,7 +1406,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67EB8DE5)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
-F (../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\heap_4.o --omf_browse balance_robot_stm\heap_4.crf --depend balance_robot_stm\heap_4.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\heap_4.o --omf_browse balance_robot_stm\heap_4.crf --depend balance_robot_stm\heap_4.d)
 I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
@@ -1158,7 +1419,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
-F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\port.o --omf_browse balance_robot_stm\port.crf --depend balance_robot_stm\port.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c)(0x67EB8DE5)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\port.o --omf_browse balance_robot_stm\port.crf --depend balance_robot_stm\port.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -1170,11 +1431,11 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
-F (..\Lib\Src\bsp_can.c)(0x67EB98DE)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\bsp_can.o --omf_browse balance_robot_stm\bsp_can.crf --depend balance_robot_stm\bsp_can.d)
-I (../Core/Inc/fdcan.h)(0x67EB8FF1)
-I (../Core/Inc/main.h)(0x67EB8FF2)
+F (..\User\Bsp\bsp_can.c)(0x67ECDE7B)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\bsp_can.o --omf_browse balance_robot_stm\bsp_can.crf --depend balance_robot_stm\bsp_can.d)
+I (../Core/Inc/fdcan.h)(0x67ECAFB5)
+I (../Core/Inc/main.h)(0x67ECB105)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
@@ -1205,14 +1466,95 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
-I (..\Lib\Inc\bsp_can.h)(0x67EB9879)
-I (..\Lib\Inc\Motor.h)(0x67EBA62E)
+I (..\User\Bsp\bsp_can.h)(0x67ECDDAB)
+I (../User/Device/Motor.h)(0x67EBA62E)
 I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-F (..\Lib\Src\Motor.c)(0x67EBAB95)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ..\Lib\Inc -I ..\Lib\Src-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\motor.o --omf_browse balance_robot_stm\motor.crf --depend balance_robot_stm\motor.d)
-I (..\Lib\Inc\Motor.h)(0x67EBA62E)
-I (..\Lib\Inc\bsp_can.h)(0x67EB9879)
+F (..\User\Bsp\bsp_dwt.c)(0x67ECDA40)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\bsp_dwt.o --omf_browse balance_robot_stm\bsp_dwt.crf --depend balance_robot_stm\bsp_dwt.d)
+I (..\User\Bsp\bsp_dwt.h)(0x67DEC9B1)
+I (../Core/Inc/main.h)(0x67ECB105)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+F (..\User\Bsp\bsp_PWM.c)(0x67ECDC4F)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\bsp_pwm.o --omf_browse balance_robot_stm\bsp_pwm.crf --depend balance_robot_stm\bsp_pwm.d)
+I (..\User\Bsp\bsp_PWM.h)(0x67DEC9B1)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Core/Inc/tim.h)(0x67ECAFB6)
+I (../Core/Inc/main.h)(0x67ECB105)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+F (..\User\Device\Motor.c)(0x67EBAB95)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\motor.o --omf_browse balance_robot_stm\motor.crf --depend balance_robot_stm\motor.d)
+I (..\User\Device\Motor.h)(0x67EBA62E)
+I (../User/Bsp/bsp_can.h)(0x67ECDDAB)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
 I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
@@ -1223,7 +1565,7 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
 I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
 I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
-I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67EB8FF2)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
@@ -1245,6 +1587,333 @@ I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
 I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
 I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025237C)
+F (..\User\Device\BMI088driver.c)(0x67ED0883)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\bmi088driver.o --omf_browse balance_robot_stm\bmi088driver.crf --depend balance_robot_stm\bmi088driver.d)
+I (..\User\Device\BMI088driver.h)(0x67ED08BD)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Core/Inc/main.h)(0x67ECB105)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+I (..\User\Device\BMI088reg.h)(0x67DEC9B1)
+I (..\User\Device\BMI088Middleware.h)(0x67DEC9B1)
+I (../User/Bsp/bsp_dwt.h)(0x67DEC9B1)
+F (..\User\Device\BMI088Middleware.c)(0x67DEC9B1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\bmi088middleware.o --omf_browse balance_robot_stm\bmi088middleware.crf --depend balance_robot_stm\bmi088middleware.d)
+I (..\User\Device\BMI088Middleware.h)(0x67DEC9B1)
+I (../Core/Inc/main.h)(0x67ECB105)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+F (..\User\Task\INS_task.c)(0x67ED029B)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\ins_task.o --omf_browse balance_robot_stm\ins_task.crf --depend balance_robot_stm\ins_task.d)
+I (..\User\Task\ins_task.h)(0x67DEC9B1)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../User/Device/BMI088driver.h)(0x67ED08BD)
+I (../Core/Inc/main.h)(0x67ECB105)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+I (../User/Algorithm/QuaternionEKF.h)(0x67ECF5AB)
+I (../User/Algorithm/kalman_filter.h)(0x67ECF496)
+I (../Drivers/CMSIS/DSP/Include/arm_math.h)(0x67EB8DEA)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (../User/Algorithm/controller.h)(0x67DEC9B1)
+I (../User/Bsp/bsp_dwt.h)(0x67DEC9B1)
+I (..\User\Lib\user_lib.h)(0x67DEC9B1)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67EB8FF1)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67EB8DE5)
+I (../User/Bsp/bsp_PWM.h)(0x67DEC9B1)
+I (../Core/Inc/tim.h)(0x67ECAFB6)
+I (../User/Algorithm/mahony_filter.h)(0x67DEC9B1)
+F (..\User\Algorithm\mahony_filter.c)(0x67DEC9B1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\mahony_filter.o --omf_browse balance_robot_stm\mahony_filter.crf --depend balance_robot_stm\mahony_filter.d)
+I (..\User\Algorithm\mahony_filter.h)(0x67DEC9B1)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/DSP/Include/arm_math.h)(0x67EB8DEA)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
+F (..\User\Algorithm\QuaternionEKF.c)(0x67ECF5E1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\quaternionekf.o --omf_browse balance_robot_stm\quaternionekf.crf --depend balance_robot_stm\quaternionekf.d)
+I (..\User\Algorithm\QuaternionEKF.h)(0x67ECF5AB)
+I (..\User\Algorithm\kalman_filter.h)(0x67ECF496)
+I (../Drivers/CMSIS/DSP/Include/arm_math.h)(0x67EB8DEA)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (E:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+F (..\User\Algorithm\kalman_filter.c)(0x67DEC9B1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\kalman_filter.o --omf_browse balance_robot_stm\kalman_filter.crf --depend balance_robot_stm\kalman_filter.d)
+I (..\User\Algorithm\kalman_filter.h)(0x67ECF496)
+I (../Drivers/CMSIS/DSP/Include/arm_math.h)(0x67EB8DEA)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (E:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+F (..\User\Algorithm\controller.c)(0x67DEC9B1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\controller.o --omf_browse balance_robot_stm\controller.crf --depend balance_robot_stm\controller.d)
+I (..\User\Algorithm\controller.h)(0x67DEC9B1)
+I (../Core/Inc/main.h)(0x67ECB105)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (../User/Bsp/bsp_dwt.h)(0x67DEC9B1)
+I (..\User\Lib\user_lib.h)(0x67DEC9B1)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67EB8FF1)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67EB8DE5)
+I (../Drivers/CMSIS/DSP/Include/arm_math.h)(0x67EB8DEA)
+I (E:\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
+F (..\User\Lib\user_lib.c)(0x67DEC9B1)(--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -W -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../User/Bsp -I ../User/Device -I ../User/Task -I ../User/Algorithm -I ../Drivers/CMSIS/DSP/Include -I ..\User\Lib --diag_suppress=2803,1,1035-I.\RTE\_balance_robot_stm-IE:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx-o balance_robot_stm\user_lib.o --omf_browse balance_robot_stm\user_lib.crf --depend balance_robot_stm\user_lib.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (..\User\Lib\user_lib.h)(0x67DEC9B1)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Core/Inc/main.h)(0x67ECB105)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h)(0x67EB8F2F)
+I (../Core/Inc/stm32h7xx_hal_conf.h)(0x67ECAFB6)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h)(0x67EB8F2F)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h)(0x67EB8F30)
+I (../Drivers/CMSIS/Include/core_cm7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67EB8DE9)
+I (../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h)(0x67EB8F30)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67EB8F2F)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h)(0x67EB8F2F)
+I (../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h)(0x67EB8F2F)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67EB8DE5)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67EB8FF1)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67EB8DE5)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67EB8DE5)
+F (..\Drivers\CMSIS\DSP\Lib\ARM\arm_cortexM7lfdp_math.lib)(0x67EB8DEA)()

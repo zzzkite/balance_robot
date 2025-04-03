@@ -33,6 +33,8 @@ balance_robot_stm\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.
 balance_robot_stm\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h
 balance_robot_stm\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h
 balance_robot_stm\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h
+balance_robot_stm\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h
+balance_robot_stm\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h
 balance_robot_stm\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 balance_robot_stm\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 balance_robot_stm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
@@ -49,9 +51,15 @@ balance_robot_stm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/tim
 balance_robot_stm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 balance_robot_stm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 balance_robot_stm\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+balance_robot_stm\main.o: ../Core/Inc/dma.h
 balance_robot_stm\main.o: ../Core/Inc/fdcan.h
 balance_robot_stm\main.o: ../Core/Inc/memorymap.h
+balance_robot_stm\main.o: ../Core/Inc/spi.h
+balance_robot_stm\main.o: ../Core/Inc/tim.h
 balance_robot_stm\main.o: ../Core/Inc/gpio.h
-balance_robot_stm\main.o: ..\Lib\Inc\bsp_can.h
-balance_robot_stm\main.o: ..\Lib\Inc\Motor.h
+balance_robot_stm\main.o: ../User/Bsp/bsp_can.h
+balance_robot_stm\main.o: ../User/Bsp/bsp_dwt.h
+balance_robot_stm\main.o: ../User/Device/BMI088driver.h
+balance_robot_stm\main.o: ../User/Device/BMI088Middleware.h
+balance_robot_stm\main.o: ../User/Device/Motor.h
 balance_robot_stm\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

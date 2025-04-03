@@ -1,0 +1,11 @@
+balance_robot_stm\quaternionekf.o: ..\User\Algorithm\QuaternionEKF.c
+balance_robot_stm\quaternionekf.o: ..\User\Algorithm\QuaternionEKF.h
+balance_robot_stm\quaternionekf.o: ..\User\Algorithm\kalman_filter.h
+balance_robot_stm\quaternionekf.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
+balance_robot_stm\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+balance_robot_stm\quaternionekf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+balance_robot_stm\quaternionekf.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+balance_robot_stm\quaternionekf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+balance_robot_stm\quaternionekf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+balance_robot_stm\quaternionekf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+balance_robot_stm\quaternionekf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

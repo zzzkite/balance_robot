@@ -1,4 +1,4 @@
-balance_robot_stm\bsp_can.o: ..\Lib\Src\bsp_can.c
+balance_robot_stm\bsp_can.o: ..\User\Bsp\bsp_can.c
 balance_robot_stm\bsp_can.o: ../Core/Inc/fdcan.h
 balance_robot_stm\bsp_can.o: ../Core/Inc/main.h
 balance_robot_stm\bsp_can.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
@@ -34,8 +34,10 @@ balance_robot_stm\bsp_can.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i
 balance_robot_stm\bsp_can.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h
 balance_robot_stm\bsp_can.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h
 balance_robot_stm\bsp_can.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h
+balance_robot_stm\bsp_can.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h
+balance_robot_stm\bsp_can.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h
 balance_robot_stm\bsp_can.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 balance_robot_stm\bsp_can.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
-balance_robot_stm\bsp_can.o: ..\Lib\Inc\bsp_can.h
-balance_robot_stm\bsp_can.o: ..\Lib\Inc\Motor.h
+balance_robot_stm\bsp_can.o: ..\User\Bsp\bsp_can.h
+balance_robot_stm\bsp_can.o: ../User/Device/Motor.h
 balance_robot_stm\bsp_can.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

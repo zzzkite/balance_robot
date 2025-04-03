@@ -1,6 +1,6 @@
-balance_robot_stm\motor.o: ..\Lib\Src\Motor.c
-balance_robot_stm\motor.o: ..\Lib\Inc\Motor.h
-balance_robot_stm\motor.o: ..\Lib\Inc\bsp_can.h
+balance_robot_stm\motor.o: ..\User\Device\Motor.c
+balance_robot_stm\motor.o: ..\User\Device\Motor.h
+balance_robot_stm\motor.o: ../User/Bsp/bsp_can.h
 balance_robot_stm\motor.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h
 balance_robot_stm\motor.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h
 balance_robot_stm\motor.o: ../Drivers/CMSIS/Include/core_cm7.h
@@ -34,6 +34,8 @@ balance_robot_stm\motor.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c
 balance_robot_stm\motor.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h
 balance_robot_stm\motor.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h
 balance_robot_stm\motor.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h
+balance_robot_stm\motor.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h
+balance_robot_stm\motor.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h
 balance_robot_stm\motor.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 balance_robot_stm\motor.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 balance_robot_stm\motor.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

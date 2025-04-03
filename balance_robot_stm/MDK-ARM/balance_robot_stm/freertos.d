@@ -42,6 +42,8 @@ balance_robot_stm\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_
 balance_robot_stm\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h
 balance_robot_stm\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h
 balance_robot_stm\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h
+balance_robot_stm\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h
+balance_robot_stm\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h
 balance_robot_stm\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 balance_robot_stm\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 balance_robot_stm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
@@ -49,3 +51,11 @@ balance_robot_stm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include
 balance_robot_stm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 balance_robot_stm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 balance_robot_stm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+balance_robot_stm\freertos.o: ../User/Task/ins_task.h
+balance_robot_stm\freertos.o: ../User/Device/BMI088driver.h
+balance_robot_stm\freertos.o: ../User/Algorithm/QuaternionEKF.h
+balance_robot_stm\freertos.o: ../User/Algorithm/kalman_filter.h
+balance_robot_stm\freertos.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
+balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

@@ -1,0 +1,10 @@
+balance_robot_stm\kalman_filter.o: ..\User\Algorithm\kalman_filter.c
+balance_robot_stm\kalman_filter.o: ..\User\Algorithm\kalman_filter.h
+balance_robot_stm\kalman_filter.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
+balance_robot_stm\kalman_filter.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+balance_robot_stm\kalman_filter.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+balance_robot_stm\kalman_filter.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+balance_robot_stm\kalman_filter.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+balance_robot_stm\kalman_filter.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+balance_robot_stm\kalman_filter.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+balance_robot_stm\kalman_filter.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

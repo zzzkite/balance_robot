@@ -32,5 +32,7 @@ balance_robot_stm\stm32h7xx_hal_dma_ex.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/st
 balance_robot_stm\stm32h7xx_hal_dma_ex.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h
 balance_robot_stm\stm32h7xx_hal_dma_ex.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h
 balance_robot_stm\stm32h7xx_hal_dma_ex.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h
+balance_robot_stm\stm32h7xx_hal_dma_ex.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h
+balance_robot_stm\stm32h7xx_hal_dma_ex.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h
 balance_robot_stm\stm32h7xx_hal_dma_ex.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 balance_robot_stm\stm32h7xx_hal_dma_ex.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
