@@ -82,7 +82,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
+            <RunUserProg2>1</RunUserProg2>
             <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -341,7 +341,7 @@
               <MiscControls>--diag_suppress=2803,1,1035</MiscControls>
               <Define>USE_PWR_LDO_SUPPLY,USE_HAL_DRIVER,STM32H723xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;../User/Bsp;../User/Device;../User/Task;../User/Algorithm;../Drivers/CMSIS/DSP/Include;..\User\Lib</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;../User/Bsp;../User/Device;../User/Task;../User/Algorithm;../Drivers/CMSIS/DSP/Include;../User/Lib</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -929,6 +929,11 @@
               <FileName>INS_task.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Task\INS_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>ps2_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Task\ps2_task.c</FilePath>
             </File>
           </Files>
         </Group>

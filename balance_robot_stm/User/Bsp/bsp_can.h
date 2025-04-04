@@ -22,5 +22,6 @@ typedef struct {
 } FDCAN_RxFrame_TypeDef;
 
 extern  FDCAN_TxFrame_TypeDef   FDCAN1_TxFrame;
+extern  FDCAN_TxFrame_TypeDef   FDCAN2_TxFrame;
 	   
 #endif

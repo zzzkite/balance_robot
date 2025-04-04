@@ -47,7 +47,7 @@ balance_robot_stm\ins_task.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
 balance_robot_stm\ins_task.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 balance_robot_stm\ins_task.o: ../User/Algorithm/controller.h
 balance_robot_stm\ins_task.o: ../User/Bsp/bsp_dwt.h
-balance_robot_stm\ins_task.o: ..\User\Lib\user_lib.h
+balance_robot_stm\ins_task.o: ../User/Lib/user_lib.h
 balance_robot_stm\ins_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 balance_robot_stm\ins_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 balance_robot_stm\ins_task.o: ../Core/Inc/FreeRTOSConfig.h

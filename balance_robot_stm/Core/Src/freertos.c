@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ins_task.h"
+#include "ps2_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,6 +50,7 @@
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
 osThreadId INS_TASKHandle;
+osThreadId PS2_TASKHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -57,6 +59,7 @@ osThreadId INS_TASKHandle;
 
 void StartDefaultTask(void const * argument);
 void INS_Task(void const * argument);
+void PS2_Task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -111,6 +114,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(INS_TASK, INS_Task, osPriorityRealtime, 0, 512);
   INS_TASKHandle = osThreadCreate(osThread(INS_TASK), NULL);
 
+  /* definition and creation of PS2_TASK */
+  osThreadDef(PS2_TASK, PS2_Task, osPriorityAboveNormal, 0, 128);
+  PS2_TASKHandle = osThreadCreate(osThread(PS2_TASK), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -152,6 +159,25 @@ void INS_Task(void const * argument)
     osDelay(1);
   }
   /* USER CODE END INS_Task */
+}
+
+/* USER CODE BEGIN Header_PS2_Task */
+/**
+* @brief Function implementing the PS2_TASK thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_PS2_Task */
+void PS2_Task(void const * argument)
+{
+  /* USER CODE BEGIN PS2_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+		pstwo_task();
+    osDelay(1);
+  }
+  /* USER CODE END PS2_Task */
 }
 
 /* Private application code --------------------------------------------------*/

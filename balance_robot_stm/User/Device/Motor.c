@@ -1,12 +1,53 @@
 #include "Motor.h"
 
-DM_Motor_Info_Typedef DM_6220_Motor = {
+// CAN1
+DM_Motor_Info_Typedef DM_4310_Motor_leftfront = {
+ 
+	 .CANFrameInfo = {
+		.CAN_ID = 0x08, 
+	  .Master_ID = 0x04, 
+	 },
+};
+
+DM_Motor_Info_Typedef DM_4310_Motor_leftback = {
+ 
+	 .CANFrameInfo = {
+		.CAN_ID = 0x06, 
+	  .Master_ID = 0x03, 
+	 },
+};
+
+DM_Motor_Info_Typedef DM_6215_Motor_left = {
  
 	 .CANFrameInfo = {
 		.CAN_ID = 0x01, 
 	  .Master_ID = 0x00, 
 	 },
+};
+
+// CAN2
+DM_Motor_Info_Typedef DM_4310_Motor_rightfront = {
  
+	 .CANFrameInfo = {
+		.CAN_ID = 0x06, 
+	  .Master_ID = 0x03, 
+	 },
+};
+
+DM_Motor_Info_Typedef DM_4310_Motor_rightback = {
+ 
+	 .CANFrameInfo = {
+		.CAN_ID = 0x08, 
+	  .Master_ID = 0x04, 
+	 },
+};
+
+DM_Motor_Info_Typedef DM_6215_Motor_right = {
+ 
+	 .CANFrameInfo = {
+		.CAN_ID = 0x01, 
+	  .Master_ID = 0x00, 
+	 },
 };
 
 // 电机参数
@@ -36,9 +77,9 @@ static int float_to_uint(float X_float, float X_min, float X_max, int bits){
 // 控制帧函数
 // param: CAN发送结构体地址，发送的CAN_ID，控制命令
 // 奇怪的是这里CMD类型为DM_Motor_CMD_e会报错
-void DM_Motor_Command(FDCAN_TxFrame_TypeDef *TxFrame,uint16_t CAN_ID,uint8_t CMD){
+void DM_Motor_Command(FDCAN_TxFrame_TypeDef *TxFrame,DM_Motor_Info_Typedef *DM_Motor ,uint8_t CMD){
 
-	 TxFrame->Header.Identifier = CAN_ID;
+	 TxFrame->Header.Identifier = DM_Motor->CANFrameInfo.CAN_ID;
   	
 	 TxFrame->Data[0] = 0xFF;
    TxFrame->Data[1] = 0xFF;

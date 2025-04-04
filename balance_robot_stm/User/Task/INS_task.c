@@ -32,10 +32,10 @@ int stop_time;
 
 //º”»»IMU
 #define IMU_DES_TEMP    40.0f
-#define IMU_KP          10000.f
-#define IMU_KI          1500.f
+#define IMU_KP          100.f
+#define IMU_KI          50.f
 #define IMU_KD          10.f
-#define IMU_MAX_OUT     100000
+#define IMU_MAX_OUT     500
 float out = 0;
 float err = 0;
 float err_l = 0;

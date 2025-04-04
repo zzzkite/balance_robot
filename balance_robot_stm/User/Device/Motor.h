@@ -64,13 +64,18 @@ typedef struct
 	
 }DM_Motor_Control_Typedef;
 
-extern DM_Motor_Info_Typedef DM_6220_Motor;
+extern DM_Motor_Info_Typedef DM_4310_Motor_leftfront;
+extern DM_Motor_Info_Typedef DM_4310_Motor_leftback;
+extern DM_Motor_Info_Typedef DM_6215_Motor_left;
+extern DM_Motor_Info_Typedef DM_4310_Motor_rightfront;
+extern DM_Motor_Info_Typedef DM_4310_Motor_rightback;
+extern DM_Motor_Info_Typedef DM_6215_Motor_right;
 
 extern DM_Motor_Control_Typedef DM_Motor_Control;
 
 extern void DM_Motor_Info_Update(uint8_t *rxBuf,DM_Motor_Info_Typedef *DM_Motor);
 
-extern void DM_Motor_Command(FDCAN_TxFrame_TypeDef *TxFrame,uint16_t CAN_ID,uint8_t CMD);
+extern void DM_Motor_Command(FDCAN_TxFrame_TypeDef *TxFrame,DM_Motor_Info_Typedef *DM_Motor ,uint8_t CMD);
 
 extern void DM_Motor_Read_Param(FDCAN_TxFrame_TypeDef *TxFrame,DM_Motor_Info_Typedef *DM_Motor,uint8_t RID);
 

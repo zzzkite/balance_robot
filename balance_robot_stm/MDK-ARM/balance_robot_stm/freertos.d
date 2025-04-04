@@ -59,3 +59,5 @@ balance_robot_stm\freertos.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
 balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+balance_robot_stm\freertos.o: ../User/Task/ps2_task.h
+balance_robot_stm\freertos.o: ../User/Bsp/bsp_dwt.h

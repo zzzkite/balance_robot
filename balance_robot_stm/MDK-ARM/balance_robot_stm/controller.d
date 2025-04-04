@@ -41,7 +41,7 @@ balance_robot_stm\controller.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ha
 balance_robot_stm\controller.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 balance_robot_stm\controller.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 balance_robot_stm\controller.o: ../User/Bsp/bsp_dwt.h
-balance_robot_stm\controller.o: ..\User\Lib\user_lib.h
+balance_robot_stm\controller.o: ../User/Lib/user_lib.h
 balance_robot_stm\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 balance_robot_stm\controller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 balance_robot_stm\controller.o: ../Core/Inc/FreeRTOSConfig.h
