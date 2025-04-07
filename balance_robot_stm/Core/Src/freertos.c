@@ -27,6 +27,8 @@
 /* USER CODE BEGIN Includes */
 #include "ins_task.h"
 #include "ps2_task.h"
+#include "chassisL_task.h"
+#include "chassisR_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,6 +53,8 @@
 osThreadId defaultTaskHandle;
 osThreadId INS_TASKHandle;
 osThreadId PS2_TASKHandle;
+osThreadId CHASSISL_TASKHandle;
+osThreadId CHASSISR_TASKHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -60,6 +64,8 @@ osThreadId PS2_TASKHandle;
 void StartDefaultTask(void const * argument);
 void INS_Task(void const * argument);
 void PS2_Task(void const * argument);
+void CHASSISL_Task(void const * argument);
+void CHASSISR_Task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -115,8 +121,16 @@ void MX_FREERTOS_Init(void) {
   INS_TASKHandle = osThreadCreate(osThread(INS_TASK), NULL);
 
   /* definition and creation of PS2_TASK */
-  osThreadDef(PS2_TASK, PS2_Task, osPriorityAboveNormal, 0, 128);
+  osThreadDef(PS2_TASK, PS2_Task, osPriorityHigh, 0, 128);
   PS2_TASKHandle = osThreadCreate(osThread(PS2_TASK), NULL);
+
+  /* definition and creation of CHASSISL_TASK */
+  osThreadDef(CHASSISL_TASK, CHASSISL_Task, osPriorityAboveNormal, 0, 512);
+  CHASSISL_TASKHandle = osThreadCreate(osThread(CHASSISL_TASK), NULL);
+
+  /* definition and creation of CHASSISR_TASK */
+  osThreadDef(CHASSISR_TASK, CHASSISR_Task, osPriorityAboveNormal, 0, 512);
+  CHASSISR_TASKHandle = osThreadCreate(osThread(CHASSISR_TASK), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -178,6 +192,44 @@ void PS2_Task(void const * argument)
     osDelay(1);
   }
   /* USER CODE END PS2_Task */
+}
+
+/* USER CODE BEGIN Header_CHASSISL_Task */
+/**
+* @brief Function implementing the CHASSISL_TASK thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_CHASSISL_Task */
+void CHASSISL_Task(void const * argument)
+{
+  /* USER CODE BEGIN CHASSISL_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+		ChassisL_task();
+    osDelay(1);
+  }
+  /* USER CODE END CHASSISL_Task */
+}
+
+/* USER CODE BEGIN Header_CHASSISR_Task */
+/**
+* @brief Function implementing the CHASSISR_TASK thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_CHASSISR_Task */
+void CHASSISR_Task(void const * argument)
+{
+  /* USER CODE BEGIN CHASSISR_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+		ChassisR_task();
+    osDelay(1);
+  }
+  /* USER CODE END CHASSISR_Task */
 }
 
 /* Private application code --------------------------------------------------*/

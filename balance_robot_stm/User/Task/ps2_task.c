@@ -60,7 +60,7 @@ void pstwo_task(void)
 
 	   PS2_data_read(&ps2data);//读数据
 //		 PS2_data_process(&ps2data,&chassis_move,(float)PS2_TIME/1000.0f);//处理数据，设置期望数据
-		 PS2_data_move(&ps2data);
+		 PS2_data_move(&ps2data,&chassis_move,(float)PS2_TIME/1000.0f);
 	   osDelay(PS2_TIME);
 	 }
 }
@@ -126,29 +126,59 @@ void PS2_data_read(ps2data_t *data)
 	}
 }
 
-void PS2_data_move(ps2data_t *data)
+void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 {
+	if(data->last_key!=9&&data->key==9){
+		chassis_move.start_flag = 1;// 底盘准备就绪启动标志位
+		chassis_move.turn_set = INS.YawTotalAngle;// 启动时就设置yaw初始目标值
+	}
+	
 	if(data->last_key!=4&&data->key==4)
 	{
+		chassis_move.start_flag = 0;// 底盘未就绪
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, Motor_Enable);
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, Motor_Enable);
-		DWT_Delay(0.01f); 
+		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftback, Motor_Enable);
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightback, Motor_Enable);
-		DWT_Delay(0.01f); 
+		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_6215_Motor_left, Motor_Enable);
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_6215_Motor_right, Motor_Enable);
 	}
+	
 	if(data->last_key!=10&&data->key==10)
 	{
+		chassis_move.start_flag = 0;// 底盘未就绪
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, Motor_Disable);
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, Motor_Disable);
-		DWT_Delay(0.01f); 
+		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftback, Motor_Disable);
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightback, Motor_Disable);
-		DWT_Delay(0.01f); 
+		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_6215_Motor_left, Motor_Disable);
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_6215_Motor_right, Motor_Disable);		
+	}
+	
+	if(chassis_move.start_flag == 1)
+	{
+		chassis->target_v=((float)(data->ry-128))*(-0.008f);//往前大于0
+		slope_following(&chassis->target_v,&chassis->v_set,0.005f);	//	坡度跟随
+		chassis->x_set = chassis->x_filter; //不控位移
+//		chassis->x_set=chassis->x_set+chassis->v_set*dt;
+//		chassis->turn_set=chassis->turn_set+(data->rx-127)*(-0.00025f);//往右大于0
+	  			
+		//腿长变化
+		chassis->leg_set=chassis->leg_set+((float)(data->ly-128))*(-0.000003f);
+		mySaturate(&chassis->leg_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
+//		chassis->roll_target= ((float)(data->lx-127))*(0.0025f);
+//		slope_following(&chassis->roll_target,&chassis->roll_set,0.0075f);
+
+//		jump_key(chassis,data);
+
+		chassis->leg_left_set = chassis->leg_set;
+		chassis->leg_right_set = chassis->leg_set;
+		mySaturate(&chassis->leg_left_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
+		mySaturate(&chassis->leg_right_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
 	}
 }
 //extern vmc_leg_t right;			

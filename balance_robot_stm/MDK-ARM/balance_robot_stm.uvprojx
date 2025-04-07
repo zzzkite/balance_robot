@@ -935,6 +935,16 @@
               <FileType>1</FileType>
               <FilePath>..\User\Task\ps2_task.c</FilePath>
             </File>
+            <File>
+              <FileName>chassisL_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Task\chassisL_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>chassisR_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Task\chassisR_task.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -959,6 +969,16 @@
               <FileName>controller.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Algorithm\controller.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Algorithm\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>VMC_calc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Algorithm\VMC_calc.c</FilePath>
             </File>
           </Files>
         </Group>

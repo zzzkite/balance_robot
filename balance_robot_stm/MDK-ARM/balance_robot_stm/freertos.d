@@ -61,3 +61,10 @@ balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
 balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 balance_robot_stm\freertos.o: ../User/Task/ps2_task.h
 balance_robot_stm\freertos.o: ../User/Bsp/bsp_dwt.h
+balance_robot_stm\freertos.o: ../User/Task/chassisR_task.h
+balance_robot_stm\freertos.o: ../User/Device/Motor.h
+balance_robot_stm\freertos.o: ../User/Bsp/bsp_can.h
+balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+balance_robot_stm\freertos.o: ../User/Algorithm/pid.h
+balance_robot_stm\freertos.o: ../User/Algorithm/VMC_calc.h
+balance_robot_stm\freertos.o: ../User/Task/chassisL_task.h

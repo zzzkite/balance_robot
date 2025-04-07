@@ -47,6 +47,12 @@ balance_robot_stm\ps2_task.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 balance_robot_stm\ps2_task.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
 balance_robot_stm\ps2_task.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 balance_robot_stm\ps2_task.o: ../User/Bsp/bsp_dwt.h
+balance_robot_stm\ps2_task.o: ..\User\Task\chassisR_task.h
+balance_robot_stm\ps2_task.o: ../User/Device/Motor.h
+balance_robot_stm\ps2_task.o: ../User/Bsp/bsp_can.h
+balance_robot_stm\ps2_task.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+balance_robot_stm\ps2_task.o: ../User/Algorithm/pid.h
+balance_robot_stm\ps2_task.o: ../User/Algorithm/VMC_calc.h
 balance_robot_stm\ps2_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 balance_robot_stm\ps2_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 balance_robot_stm\ps2_task.o: ../Core/Inc/FreeRTOSConfig.h
@@ -63,6 +69,3 @@ balance_robot_stm\ps2_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include
 balance_robot_stm\ps2_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 balance_robot_stm\ps2_task.o: ../User/Lib/user_lib.h
 balance_robot_stm\ps2_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-balance_robot_stm\ps2_task.o: ../User/Device/Motor.h
-balance_robot_stm\ps2_task.o: ../User/Bsp/bsp_can.h
-balance_robot_stm\ps2_task.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

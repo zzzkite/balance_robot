@@ -4,6 +4,7 @@
 #include "main.h"
 #include "ins_task.h"
 #include "bsp_dwt.h"
+#include "chassisR_task.h"
 
 //These are our button constants
 #define PSB_SELECT      1
@@ -54,7 +55,7 @@ extern uint16_t MASK[16];
 extern uint16_t Handkey;
 
 extern void PS2_data_read(ps2data_t *data);
-void PS2_data_move(ps2data_t *data);
+void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt);
 //extern void PS2_data_process(ps2data_t *data,chassis_t *chassis,float dt);
  
 	

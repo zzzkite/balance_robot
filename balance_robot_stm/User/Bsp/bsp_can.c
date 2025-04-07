@@ -76,21 +76,21 @@ void BSP_FDCAN2_Init(void){
 static void FDCAN1_RxFifo0RxHandler(uint32_t *Master_ID,uint8_t Data[8])
 {
   if(*Master_ID == DM_4310_Motor_leftfront.CANFrameInfo.Master_ID)
-		DM_Motor_Info_Update(Data,&DM_4310_Motor_leftfront);
+		DM_Motor_Info_Update_4310(Data,&DM_4310_Motor_leftfront);
 	else if(*Master_ID == DM_4310_Motor_leftback.CANFrameInfo.Master_ID)
-		DM_Motor_Info_Update(Data,&DM_4310_Motor_leftback);
+		DM_Motor_Info_Update_4310(Data,&DM_4310_Motor_leftback);
 	else if(*Master_ID == DM_6215_Motor_left.CANFrameInfo.Master_ID)
-		DM_Motor_Info_Update(Data,&DM_6215_Motor_left);
+		DM_Motor_Info_Update_6215(Data,&DM_6215_Motor_left);
 }
 
 static void FDCAN2_RxFifo1RxHandler(uint32_t *Master_ID,uint8_t Data[8])
 {
   if(*Master_ID == DM_4310_Motor_rightfront.CANFrameInfo.Master_ID)
-		DM_Motor_Info_Update(Data,&DM_4310_Motor_rightfront);
+		DM_Motor_Info_Update_4310(Data,&DM_4310_Motor_rightfront);
 	else if(*Master_ID == DM_4310_Motor_rightback.CANFrameInfo.Master_ID)
-		DM_Motor_Info_Update(Data,&DM_4310_Motor_rightback);
+		DM_Motor_Info_Update_4310(Data,&DM_4310_Motor_rightback);
 	else if(*Master_ID == DM_6215_Motor_right.CANFrameInfo.Master_ID)
-		DM_Motor_Info_Update(Data,&DM_6215_Motor_right);
+		DM_Motor_Info_Update_6215(Data,&DM_6215_Motor_right);
 
 }
 
