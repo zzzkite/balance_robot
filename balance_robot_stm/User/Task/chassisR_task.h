@@ -54,6 +54,7 @@ typedef struct
 	
 	float myPithR;
 	float myPithGyroR;
+	float Pitch_smooth; //平滑后的信号
 	float myPithL;
 	float myPithGyroL;
 	float roll;

@@ -271,6 +271,10 @@ void OLS_Update(Ordinary_Least_Squares_t *OLS, float deltax, float y)
 
     OLS->k = (OLS->t[2] * OLS->Order - OLS->t[1] * OLS->t[3]) / (OLS->t[0] * OLS->Order - OLS->t[1] * OLS->t[1]);
     OLS->b = (OLS->t[0] * OLS->t[3] - OLS->t[1] * OLS->t[2]) / (OLS->t[0] * OLS->Order - OLS->t[1] * OLS->t[1]);
+		
+		// 计算k和b时使用Count代替Order，DS的更新
+		OLS->k = (OLS->t[2] * OLS->Count - OLS->t[1] * OLS->t[3]) / (OLS->t[0] * OLS->Count - OLS->t[1] * OLS->t[1]);
+		OLS->b = (OLS->t[0] * OLS->t[3] - OLS->t[1] * OLS->t[2]) / (OLS->t[0] * OLS->Count - OLS->t[1] * OLS->t[1]);
 
     OLS->StandardDeviation = 0;
     for (uint16_t i = OLS->Order - OLS->Count; i < OLS->Order; ++i)
@@ -278,6 +282,9 @@ void OLS_Update(Ordinary_Least_Squares_t *OLS, float deltax, float y)
         OLS->StandardDeviation += fabsf(OLS->k * OLS->x[i] + OLS->b - OLS->y[i]);
     }
     OLS->StandardDeviation /= OLS->Order;
+		
+		// 计算标准差时使用Count，DS的更新
+		OLS->StandardDeviation /= OLS->Count;
 }
 
 /**

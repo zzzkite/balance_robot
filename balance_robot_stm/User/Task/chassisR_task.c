@@ -20,6 +20,7 @@
 #include "chassisR_task.h"
 #include "fdcan.h"
 #include "cmsis_os.h"
+#include "user_lib.h"
 
 float LQR_K_R[12]={ 
    -2.0983 , -0.2576   , -0.7013 ,  -1.3023 ,    3.0014  ,  0.3509,
@@ -78,6 +79,7 @@ PidTypeDef LegR_Pid;//右腿的腿长pd
 PidTypeDef Tp_Pid;//防劈叉补偿pd
 PidTypeDef Turn_Pid;//转向pd
 PidTypeDef RollR_Pid; //ROLL补偿pd
+Ordinary_Least_Squares_t Pitch_smoother;
 uint32_t CHASSR_TIME=1;				
 void ChassisR_task(void)
 {
@@ -97,6 +99,7 @@ void ChassisR_task(void)
   ChassisR_init(&chassis_move,&right_vmc,&LegR_Pid);//初始化右边两个关节电机和右边轮毂电机的id和控制模式、初始化腿部
   Pensation_init(&Tp_Pid,&Turn_Pid);//补偿pid初始化
 //	roll_pid_init(&RollR_Pid);
+	OLS_Init(&Pitch_smoother, 10);
 	while(1)
 	{	
 		chassisR_feedback_update(&chassis_move,&right_vmc,&INS);//更新数据
@@ -164,6 +167,8 @@ void chassisR_feedback_update(chassis_t *chassis,vmc_leg_t *vmc,INS_t *ins)
 		
 	chassis->myPithR = ins->Pitch; //这里低头pitch为负数，和仿真中正方向一致
 	chassis->myPithGyroR = ins->Gyro[0];
+	chassis->Pitch_smooth = OLS_Smooth(&Pitch_smoother, chassis->myPithR, CHASSR_TIME*3); //最小二乘平滑滤波处理
+	
 	
 	chassis->total_yaw=ins->YawTotalAngle;
 //	chassis->roll=ins->Roll;
