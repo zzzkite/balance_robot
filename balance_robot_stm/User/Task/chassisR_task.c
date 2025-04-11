@@ -21,6 +21,7 @@
 #include "fdcan.h"
 #include "cmsis_os.h"
 #include "user_lib.h"
+#include "bsp_dwt.h"
 
 float LQR_K_R[12]={ 
    -2.0983 , -0.2576   , -0.7013 ,  -1.3023 ,    3.0014  ,  0.3509,
@@ -80,7 +81,9 @@ PidTypeDef Tp_Pid;//防劈叉补偿pd
 PidTypeDef Turn_Pid;//转向pd
 PidTypeDef RollR_Pid; //ROLL补偿pd
 Ordinary_Least_Squares_t Pitch_smoother;
-uint32_t CHASSR_TIME=1;				
+uint32_t CHASSR_TIME_DWT; //dwt获取的系统时间
+float CHASSR_dt;
+uint32_t CHASSR_TIME=1;	//任务延时			
 void ChassisR_task(void)
 {
 	while(INS.ins_flag==0)
@@ -102,6 +105,7 @@ void ChassisR_task(void)
 	OLS_Init(&Pitch_smoother, 10);
 	while(1)
 	{	
+		CHASSR_dt = DWT_GetDeltaT(&CHASSR_TIME_DWT);//获取系统时间
 		chassisR_feedback_update(&chassis_move,&right_vmc,&INS);//更新数据
 	  chassisR_control_loop(&chassis_move,&right_vmc,&INS,LQR_K_R,&LegR_Pid);//控制计算
    
@@ -167,7 +171,7 @@ void chassisR_feedback_update(chassis_t *chassis,vmc_leg_t *vmc,INS_t *ins)
 		
 	chassis->myPithR = ins->Pitch; //这里低头pitch为负数，和仿真中正方向一致
 	chassis->myPithGyroR = ins->Gyro[0];
-	chassis->Pitch_smooth = OLS_Smooth(&Pitch_smoother, chassis->myPithR, CHASSR_TIME*3); //最小二乘平滑滤波处理
+	chassis->Pitch_smooth = OLS_Smooth(&Pitch_smoother, CHASSR_TIME*3, chassis->myPithR); //最小二乘平滑滤波处理
 	
 	
 	chassis->total_yaw=ins->YawTotalAngle;

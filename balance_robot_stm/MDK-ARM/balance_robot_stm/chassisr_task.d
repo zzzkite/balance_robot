@@ -68,3 +68,4 @@ balance_robot_stm\chassisr_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/in
 balance_robot_stm\chassisr_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 balance_robot_stm\chassisr_task.o: ../User/Lib/user_lib.h
 balance_robot_stm\chassisr_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+balance_robot_stm\chassisr_task.o: ../User/Bsp/bsp_dwt.h
