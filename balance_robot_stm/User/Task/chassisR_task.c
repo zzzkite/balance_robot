@@ -169,13 +169,13 @@ void chassisR_feedback_update(chassis_t *chassis,vmc_leg_t *vmc,INS_t *ins)
   vmc->phi1 = pi+chassis->joint_motor[0].Data.Position;
 	vmc->phi4 = chassis->joint_motor[1].Data.Position;
 		
-	chassis->myPithR = ins->Pitch; //这里低头pitch为负数，和仿真中正方向一致
-	chassis->myPithGyroR = ins->Gyro[0];
+	chassis->myPithR = -ins->Pitch; //仿真中抬头为正，原数据是低头为正
+	chassis->myPithGyroR = -ins->Gyro[0]; //ins-Gyro0是低头增加
 	chassis->Pitch_smooth = OLS_Smooth(&Pitch_smoother, CHASSR_TIME*3, chassis->myPithR); //最小二乘平滑滤波处理
 	
 	
 	chassis->total_yaw=ins->YawTotalAngle;
-//	chassis->roll=ins->Roll;
+//	chassis->roll=-ins->Roll;
 	chassis->theta_err = left_vmc.theta - vmc->theta; //左-右
 	
 //	if(ins->Pitch<(3.1415926f/6.0f)&&ins->Pitch>(-3.1415926f/6.0f)) //30度

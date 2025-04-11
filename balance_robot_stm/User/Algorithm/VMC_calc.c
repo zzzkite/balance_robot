@@ -14,8 +14,8 @@ void VMC_calc_1_right(vmc_leg_t *vmc,INS_t *ins,float dt)//计算theta和d_theta给l
 {		
 		static float PitchR=0.0f;
 	  static float PithGyroR=0.0f;
-	  PitchR=ins->Pitch;//低头负数则和仿真方向一致
-	  PithGyroR=ins->Gyro[0];
+	  PitchR=-ins->Pitch;//低头负数则和仿真方向一致
+	  PithGyroR=-ins->Gyro[0];
 	
 	  vmc->YD = vmc->l4*arm_sin_f32(vmc->phi4);//D的y坐标
 	  vmc->YB = vmc->l1*arm_sin_f32(vmc->phi1);//B的y坐标
@@ -68,7 +68,7 @@ void VMC_calc_1_left(vmc_leg_t *vmc,INS_t *ins,float dt)//计算theta和d_theta给lq
 {		
 	  static float PitchL=0.0f;
 	  static float PithGyroL=0.0f;
-	  PitchL=ins->Pitch;
+	  PitchL=-ins->Pitch;
 	  PithGyroL=-ins->Gyro[0];
 	
 		vmc->YD = vmc->l4*arm_sin_f32(vmc->phi4);//D的y坐标
