@@ -41,8 +41,6 @@ balance_robot_stm\chassisl_task.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx
 balance_robot_stm\chassisl_task.o: ../User/Device/Motor.h
 balance_robot_stm\chassisl_task.o: ../User/Bsp/bsp_can.h
 balance_robot_stm\chassisl_task.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-balance_robot_stm\chassisl_task.o: ..\User\Task\chassisR_task.h
-balance_robot_stm\chassisl_task.o: ../User/Algorithm/pid.h
 balance_robot_stm\chassisl_task.o: ../User/Algorithm/VMC_calc.h
 balance_robot_stm\chassisl_task.o: ../User/Task/INS_task.h
 balance_robot_stm\chassisl_task.o: ../User/Device/BMI088driver.h
@@ -66,3 +64,5 @@ balance_robot_stm\chassisl_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/in
 balance_robot_stm\chassisl_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 balance_robot_stm\chassisl_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 balance_robot_stm\chassisl_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+balance_robot_stm\chassisl_task.o: ../User/Algorithm/pid.h
+balance_robot_stm\chassisl_task.o: ..\User\Task\chassisR_task.h

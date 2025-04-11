@@ -945,6 +945,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\Task\chassisR_task.c</FilePath>
             </File>
+            <File>
+              <FileName>observe_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Task\observe_task.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

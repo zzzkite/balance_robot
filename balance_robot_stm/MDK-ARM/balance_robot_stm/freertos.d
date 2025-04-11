@@ -68,3 +68,5 @@ balance_robot_stm\freertos.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 balance_robot_stm\freertos.o: ../User/Algorithm/pid.h
 balance_robot_stm\freertos.o: ../User/Algorithm/VMC_calc.h
 balance_robot_stm\freertos.o: ../User/Task/chassisL_task.h
+balance_robot_stm\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+balance_robot_stm\freertos.o: ../User/Task/observe_task.h

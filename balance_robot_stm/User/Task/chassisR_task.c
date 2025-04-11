@@ -68,11 +68,11 @@ float LQR_K_R[12]={
 //																{-313.237104933888,	197.784837724870	,-46.4812453696717,	4.81419185198688},
 //																{360.850043501824,	-212.560933205359	,44.0392588918109 ,	9.96626295435711},
 //																{25.0961164366780	,-15.1533421691331,	3.28051567574422	,0.286235660771812}};
-vmc_leg_t right_vmc;
 
-extern INS_t INS;
-extern vmc_leg_t left_vmc;														
+extern vmc_leg_t left_vmc;	
+extern INS_t INS;													
 chassis_t chassis_move;
+vmc_leg_t right_vmc;
 															
 PidTypeDef LegR_Pid;//右腿的腿长pd
 PidTypeDef Tp_Pid;//防劈叉补偿pd
@@ -194,9 +194,7 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 		
 	//测试/
 	
-	//如果想直接用轮子速度，不做融合的话可以这样
-	chassis_move.v_filter = (-chassis_move.wheel_motor[0].Data.Velocity + chassis_move.wheel_motor[1].Data.Velocity)*(0.0603f)/2.0f;//0.0603是轮子半径，电机反馈的是角速度，乘半径后得到线速度，数学模型中定义的是轮子顺时针为正，所以要乘个负号
-	chassis_move.x_filter = chassis_move.x_filter + chassis_move.v_filter*((float)CHASSR_TIME*3/1000.0f);
+
 	
 	//测试/
 	
@@ -227,7 +225,7 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 //	vmcr->F0= PID_Calc(leg,vmcr->L0, chassis->leg_right_set) + chassis->now_roll_set;//测试腿长控制用
 //	jump_loop_r(chassis,vmcr,leg);
 		
-//	right_flag=ground_detectionR(vmcr,ins);//右腿离地检测
+	right_flag=ground_detectionR(vmcr,ins);//右腿离地检测
 //	 
 //	 if(chassis->recover_flag==0)		
 //	 {//倒地自起不需要检测是否离地	 

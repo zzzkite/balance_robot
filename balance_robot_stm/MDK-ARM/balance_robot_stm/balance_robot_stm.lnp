@@ -53,6 +53,7 @@
 "balance_robot_stm\ps2_task.o"
 "balance_robot_stm\chassisl_task.o"
 "balance_robot_stm\chassisr_task.o"
+"balance_robot_stm\observe_task.o"
 "balance_robot_stm\mahony_filter.o"
 "balance_robot_stm\quaternionekf.o"
 "balance_robot_stm\kalman_filter.o"

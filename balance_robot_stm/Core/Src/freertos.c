@@ -29,6 +29,7 @@
 #include "ps2_task.h"
 #include "chassisL_task.h"
 #include "chassisR_task.h"
+#include "observe_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,6 +56,7 @@ osThreadId INS_TASKHandle;
 osThreadId PS2_TASKHandle;
 osThreadId CHASSISL_TASKHandle;
 osThreadId CHASSISR_TASKHandle;
+osThreadId OBSERVE_TASKHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -66,6 +68,7 @@ void INS_Task(void const * argument);
 void PS2_Task(void const * argument);
 void CHASSISL_Task(void const * argument);
 void CHASSISR_Task(void const * argument);
+void OBSERVE_Task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -125,12 +128,16 @@ void MX_FREERTOS_Init(void) {
   PS2_TASKHandle = osThreadCreate(osThread(PS2_TASK), NULL);
 
   /* definition and creation of CHASSISL_TASK */
-  osThreadDef(CHASSISL_TASK, CHASSISL_Task, osPriorityAboveNormal, 0, 512);
+  osThreadDef(CHASSISL_TASK, CHASSISL_Task, osPriorityNormal, 0, 512);
   CHASSISL_TASKHandle = osThreadCreate(osThread(CHASSISL_TASK), NULL);
 
   /* definition and creation of CHASSISR_TASK */
-  osThreadDef(CHASSISR_TASK, CHASSISR_Task, osPriorityAboveNormal, 0, 512);
+  osThreadDef(CHASSISR_TASK, CHASSISR_Task, osPriorityNormal, 0, 512);
   CHASSISR_TASKHandle = osThreadCreate(osThread(CHASSISR_TASK), NULL);
+
+  /* definition and creation of OBSERVE_TASK */
+  osThreadDef(OBSERVE_TASK, OBSERVE_Task, osPriorityAboveNormal, 0, 512);
+  OBSERVE_TASKHandle = osThreadCreate(osThread(OBSERVE_TASK), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -230,6 +237,25 @@ void CHASSISR_Task(void const * argument)
     osDelay(1);
   }
   /* USER CODE END CHASSISR_Task */
+}
+
+/* USER CODE BEGIN Header_OBSERVE_Task */
+/**
+* @brief Function implementing the OBSERVE_TASK thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_OBSERVE_Task */
+void OBSERVE_Task(void const * argument)
+{
+  /* USER CODE BEGIN OBSERVE_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+		Observe_task();
+    osDelay(1);
+  }
+  /* USER CODE END OBSERVE_Task */
 }
 
 /* Private application code --------------------------------------------------*/

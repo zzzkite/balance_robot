@@ -78,6 +78,7 @@ typedef struct
 	
 } chassis_t;
 
+extern vmc_leg_t right_vmc;	
 extern chassis_t chassis_move;
 extern void ChassisR_init(chassis_t *chassis,vmc_leg_t *vmc,PidTypeDef *legr);
 extern void ChassisR_task(void);

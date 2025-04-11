@@ -17,11 +17,6 @@
   */
 	
 #include "chassisL_task.h"
-#include "bsp_can.h"
-#include "VMC_calc.h"
-#include "INS_task.h"
-#include "cmsis_os.h"
-#include "pid.h"
 
 vmc_leg_t left_vmc;
 
@@ -133,7 +128,7 @@ void chassisL_control_loop(chassis_t *chassis,vmc_leg_t *vmcl,INS_t *ins,float *
 
 //	jump_loop_l(chassis,vmcl,leg); 	
 
-//	left_flag=ground_detectionL(vmcl,ins);//左腿离地检测
+	left_flag=ground_detectionL(vmcl,ins);//左腿离地检测
 //	
 //	 if(chassis->recover_flag==0)	
 //	 {//倒地自起不需要检测是否离地
