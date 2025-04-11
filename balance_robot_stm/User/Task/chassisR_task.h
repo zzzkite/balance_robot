@@ -7,13 +7,13 @@
 #include "VMC_calc.h"
 #include "INS_task.h"
 
-#define TP_PID_KP 10.0f
+#define TP_PID_KP 5.0f//10.0f
 #define TP_PID_KI 0.0f 
 #define TP_PID_KD 0.1f
 #define TP_PID_MAX_OUT  2.0f
 #define TP_PID_MAX_IOUT 0.0f
 
-#define TURN_PID_KP 2.0f
+#define TURN_PID_KP 1.0f//2.0f
 #define TURN_PID_KI 0.0f 
 #define TURN_PID_KD 0.2f
 #define TURN_PID_MAX_OUT  1.0f//轮毂电机的额定扭矩

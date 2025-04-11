@@ -22,8 +22,8 @@
 #include "cmsis_os.h"
 
 float LQR_K_R[12]={ 
-   -1.7323 ,  -0.2163  , -0.6886 ,  -0.8960 ,    3.0823  ,  0.3612,
-    1.8842,   0.2119  ,   0.7182  ,  0.9088  , 16.7720 ,  0.7983};
+   -2.0983 , -0.2576   , -0.7013 ,  -1.3023 ,    3.0014  ,  0.3509,
+    1.5783,   0.1444  ,   0.4046  ,  0.7373  , 17.5852 ,  0.7476};
 
 //DM
 //float LQR_K_R[12]={ 
@@ -108,7 +108,7 @@ void ChassisR_task(void)
 			osDelay(CHASSR_TIME);
 			DM_Motor_CAN_TxMessage_4310(&FDCAN2_TxFrame, &chassis_move.joint_motor[1], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.joint_motor[1].Control.Torque);
 			osDelay(CHASSR_TIME);
-			//DM_Motor_CAN_TxMessage_6215(&FDCAN2_TxFrame, &chassis_move.wheel_motor[0], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.wheel_motor[0].Control.Torque);
+			DM_Motor_CAN_TxMessage_6215(&FDCAN2_TxFrame, &chassis_move.wheel_motor[0], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.wheel_motor[0].Control.Torque);
 			osDelay(CHASSR_TIME);
 		}
 		else if(chassis_move.start_flag==0)	
@@ -162,7 +162,7 @@ void chassisR_feedback_update(chassis_t *chassis,vmc_leg_t *vmc,INS_t *ins)
   vmc->phi1 = pi+chassis->joint_motor[0].Data.Position;
 	vmc->phi4 = chassis->joint_motor[1].Data.Position;
 		
-	chassis->myPithR = ins->Pitch; //这里低头pitch为负数，和世界坐标系相反
+	chassis->myPithR = ins->Pitch; //这里低头pitch为负数，和仿真中正方向一致
 	chassis->myPithGyroR = ins->Gyro[0];
 	
 	chassis->total_yaw=ins->YawTotalAngle;
@@ -215,15 +215,16 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 					+LQR_K[10]*(0.0f - chassis->myPithR)
 					+LQR_K[11]*(0.0f - chassis->myPithGyroR));
 				
-	chassis->wheel_motor[0].Control.Torque = chassis->wheel_motor[0].Control.Torque - chassis->turn_T;	//轮毂电机输出力矩
+	chassis->wheel_motor[0].Control.Torque = chassis->wheel_motor[0].Control.Torque + chassis->turn_T;	//轮毂电机输出力矩
 	mySaturate(&chassis->wheel_motor[0].Control.Torque,-1.0f,1.0f);	
-	vmcr->Tp = vmcr->Tp - chassis->leg_tp;//髋关节输出力矩
+	vmcr->Tp = vmcr->Tp + chassis->leg_tp;//髋关节输出力矩
 
 
 //	chassis->now_roll_set = PID_Calc(&RollR_Pid,chassis->roll,chassis->roll_set);
 
-//	vmcr->F0= PID_Calc(leg,vmcr->L0, chassis->leg_right_set) + chassis->now_roll_set;//测试腿长控制用
+
 	vmcr->F0=10.5f/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0, chassis->leg_right_set) + chassis->now_roll_set;//前馈+pd，这里ROLL补偿的正负方向需要测试
+//	vmcr->F0= PID_Calc(leg,vmcr->L0, chassis->leg_right_set) + chassis->now_roll_set;//测试腿长控制用
 //	jump_loop_r(chassis,vmcr,leg);
 		
 //	right_flag=ground_detectionR(vmcr,ins);//右腿离地检测

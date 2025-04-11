@@ -26,8 +26,8 @@
 vmc_leg_t left_vmc;
 
 float LQR_K_L[12]={ 
-   -1.7323 ,  -0.2163  , -0.6886 ,  -0.8960 ,    3.0823  ,  0.3612,
-    1.8842,   0.2119  ,   0.7182  ,  0.9088  , 16.7720 ,  0.7983};
+   -2.0983 , -0.2576   , -0.7013 ,  -1.3023 ,    3.0014  ,  0.3509,
+    1.5783,   0.1444  ,   0.4046  ,  0.7373  , 17.5852 ,  0.7476};
 
 //dm
 //float LQR_K_L[12]={ 
@@ -60,7 +60,7 @@ void ChassisL_task(void)
 			osDelay(CHASSL_TIME);
 			DM_Motor_CAN_TxMessage_4310(&FDCAN1_TxFrame, &chassis_move.joint_motor[2], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.joint_motor[2].Control.Torque);// LeftBack
 			osDelay(CHASSL_TIME);
-//			DM_Motor_CAN_TxMessage_6215(&FDCAN1_TxFrame, &chassis_move.wheel_motor[1], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.wheel_motor[1].Control.Torque);
+			DM_Motor_CAN_TxMessage_6215(&FDCAN1_TxFrame, &chassis_move.wheel_motor[1], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.wheel_motor[1].Control.Torque);
 			osDelay(CHASSL_TIME);
 		}
 		else if(chassis_move.start_flag==0)	
@@ -123,11 +123,11 @@ void chassisL_control_loop(chassis_t *chassis,vmc_leg_t *vmcl,INS_t *ins,float *
 					+LQR_K[10]*(0.0f - chassis->myPithR)
 					+LQR_K[11]*(0.0f - chassis->myPithGyroR));
 	 		
-	chassis->wheel_motor[1].Control.Torque = chassis->wheel_motor[1].Control.Torque + chassis->turn_T;	//轮毂电机输出力矩，yaw补偿取负
+	chassis->wheel_motor[1].Control.Torque = chassis->wheel_motor[1].Control.Torque - chassis->turn_T;	//轮毂电机输出力矩，yaw补偿取负
 	//根据电机正方向输出值取负号：
 	chassis->wheel_motor[1].Control.Torque = -chassis->wheel_motor[1].Control.Torque;
 	mySaturate(&chassis->wheel_motor[1].Control.Torque,-1.0f,1.0f);	
-	vmcl->Tp = vmcl->Tp + chassis->leg_tp;//髋关节输出力矩，防劈叉补偿取负
+	vmcl->Tp = vmcl->Tp - chassis->leg_tp;//髋关节输出力矩，防劈叉补偿取负
 	vmcl->F0=10.5f/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0, chassis->leg_right_set) - chassis->now_roll_set;//前馈+pd，这里ROLL补偿的正负方向需要测试
 //	vmcl->F0=+ PID_Calc(leg,vmcl->L0, chassis->leg_right_set) - chassis->now_roll_set;//测试腿长控制用
 

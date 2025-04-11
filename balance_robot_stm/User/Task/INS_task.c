@@ -114,7 +114,7 @@ void INS_task(void)
 		if(ins_time>3000.0f)
 		{
 			INS.ins_flag=1;//四元数基本收敛，加速度也基本收敛，可以开始底盘任务
-			// 获取最终数据
+			// 获取最终数据，转换时这里roll可直接相等，pitch需要变为负才能修正为正方向，加速度同理
       INS.Pitch=mahony.roll;
 		  INS.Roll=mahony.pitch;
 		  INS.Yaw=mahony.yaw;

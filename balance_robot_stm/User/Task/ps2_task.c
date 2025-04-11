@@ -159,8 +159,8 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_6215_Motor_right, Motor_Disable);		
 	}
 	
-	if(chassis_move.start_flag == 1)
-	{
+//	if(chassis_move.start_flag == 1)
+//	{
 		chassis->target_v=((float)(data->ry-128))*(-0.008f);//往前大于0
 		slope_following(&chassis->target_v,&chassis->v_set,0.005f);	//	坡度跟随
 		chassis->x_set = chassis->x_filter; //不控位移
@@ -179,7 +179,7 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 		chassis->leg_right_set = chassis->leg_set;
 		mySaturate(&chassis->leg_left_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
 		mySaturate(&chassis->leg_right_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
-	}
+//	}
 }
 //extern vmc_leg_t right;			
 //extern vmc_leg_t left;	
