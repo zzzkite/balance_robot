@@ -130,7 +130,7 @@ void PS2_data_process(ps2data_t *data,chassis_t *chassis,float dt)
 {   
 	if(data->last_key!=4&&data->key==4&&chassis->start_flag==0) 
 	{
-		//手柄上的Start按键被按下
+		//手柄上的Start按键被按下，启动
 		chassis->start_flag=1;
 		if(chassis->recover_flag==0
 			&&((chassis->myPithR<((-3.1415926f)/4.0f)&&chassis->myPithR>((-3.1415926f)/2.0f))
@@ -141,7 +141,7 @@ void PS2_data_process(ps2data_t *data,chassis_t *chassis,float dt)
 	}
 	else if(data->last_key!=4&&data->key==4&&chassis->start_flag==1) 
 	{
-		//手柄上的Start按键被按下
+		//手柄上的Start按键被按下，停止
 		chassis->start_flag=0;
 		chassis->recover_flag=0;
 	}

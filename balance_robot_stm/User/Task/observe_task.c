@@ -68,13 +68,13 @@ void 	Observe_task(void)
   while(1)
 	{  
 		OBSERVE_dt = DWT_GetDeltaT(&OBSERVE_TIME_DWT);//获取系统时间
-		wr= -DM_6215_Motor_right.Data.Velocity-INS.Gyro[0]+right_vmc.d_alpha;//右边驱动轮转子相对大地角速度，这里定义的是顺时针为正
-		vrb=wr*0.0603f+right_vmc.L0*right_vmc.d_theta*arm_cos_f32(right_vmc.theta)+right_vmc.d_L0*arm_sin_f32(right_vmc.theta);//机体b系的速度
+		wr= -DM_6215_Motor_right.Data.Velocity - INS.Gyro[0] + right_vmc.d_alpha;//右边驱动轮转子相对大地角速度
+		vrb=wr*0.0603f+ right_vmc.L0*right_vmc.d_theta*arm_cos_f32(right_vmc.theta) + right_vmc.d_L0*arm_sin_f32(right_vmc.theta);//机体b系的速度
 		
-		wl= -DM_6215_Motor_left.Data.Velocity+INS.Gyro[0]+left_vmc.d_alpha;//左边驱动轮转子相对大地角速度，这里定义的是顺时针为正
-		vlb=wl*0.0603f+left_vmc.L0*left_vmc.d_theta*arm_cos_f32(left_vmc.theta)+left_vmc.d_L0*arm_sin_f32(left_vmc.theta);//机体b系的速度
+		wl= DM_6215_Motor_left.Data.Velocity - INS.Gyro[0] + left_vmc.d_alpha;//左边驱动轮转子相对大地角速度
+		vlb=wl*0.0603f+ left_vmc.L0*left_vmc.d_theta*arm_cos_f32(left_vmc.theta) + left_vmc.d_L0*arm_sin_f32(left_vmc.theta);//机体b系的速度
 		
-		aver_v=(vrb-vlb)/2.0f;//取平均
+		aver_v=(vlb-vrb)/2.0f;//取平均
     xvEstimateKF_Update(&vaEstimateKF,INS.MotionAccel_n[1],aver_v);
 		
 		//原地自转的过程中v_filter和x_filter应该都是为0
