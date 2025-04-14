@@ -78,8 +78,8 @@ void 	Observe_task(void)
     xvEstimateKF_Update(&vaEstimateKF,INS.MotionAccel_n[1],aver_v);
 		
 		//原地自转的过程中v_filter和x_filter应该都是为0
-		chassis_move.v_filter=vel_acc[0];//得到卡尔曼滤波后的速度
-		chassis_move.x_filter=chassis_move.x_filter+chassis_move.v_filter*((float)OBSERVE_TIME/1000.0f);
+		chassis_move.v_kfilter=vel_acc[0];//得到卡尔曼滤波后的速度
+		chassis_move.x_kfilter=chassis_move.x_filter+chassis_move.v_filter*OBSERVE_dt;
 		
 		//如果想直接用轮子速度，不做融合的话可以这样
 		v_origin = (-DM_6215_Motor_right.Data.Velocity + DM_6215_Motor_left.Data.Velocity)*(0.0603f)/2.0f;//0.0603是轮子半径，电机反馈的是角速度，乘半径后得到线速度，数学模型中定义的是轮子顺时针为正，所以要乘个负号

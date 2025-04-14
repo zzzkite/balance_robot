@@ -46,6 +46,8 @@ typedef struct
 	float roll_target;
 	float now_roll_set;
 
+	float v_kfilter;
+	float x_kfilter;
 	float v_filter;//滤波后的车体速度，单位是m/s
 	float x_filter;//滤波后的车体位置，单位是m
 	
