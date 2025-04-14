@@ -16,6 +16,11 @@
 #include "observe_task.h"
 #include "kalman_filter.h"
 #include "cmsis_os.h"
+#include "Motor.h"
+#include "bsp_dwt.h"
+#include "user_lib.h"
+
+Ordinary_Least_Squares_t v_smoother; //低通滤波
 
 KalmanFilter_t vaEstimateKF;	   // 卡尔曼滤波器结构体
 
@@ -43,7 +48,9 @@ extern vmc_leg_t right;
 extern vmc_leg_t left;	
 
 float vel_acc[2]; 
-uint32_t OBSERVE_TIME=3;//任务周期是3ms															 
+uint32_t OBSERVE_TIME=3;//任务周期是3ms		
+uint32_t OBSERVE_TIME_DWT; //dwt获取的系统时间
+float OBSERVE_dt;																 
 void 	Observe_task(void)
 {
 	while(INS.ins_flag==0)
@@ -53,15 +60,18 @@ void 	Observe_task(void)
 	static float wr,wl=0.0f;
 	static float vrb,vlb=0.0f;
 	static float aver_v=0.0f;
+	static float v_origin=0.0f;
+	OLS_Init(&v_smoother, 50);
 		
 	xvEstimateKF_Init(&vaEstimateKF);
 	
   while(1)
 	{  
-		wr= -chassis_move.wheel_motor[0].Data.Velocity-INS.Gyro[0]+right_vmc.d_alpha;//右边驱动轮转子相对大地角速度，这里定义的是顺时针为正
+		OBSERVE_dt = DWT_GetDeltaT(&OBSERVE_TIME_DWT);//获取系统时间
+		wr= -DM_6215_Motor_right.Data.Velocity-INS.Gyro[0]+right_vmc.d_alpha;//右边驱动轮转子相对大地角速度，这里定义的是顺时针为正
 		vrb=wr*0.0603f+right_vmc.L0*right_vmc.d_theta*arm_cos_f32(right_vmc.theta)+right_vmc.d_L0*arm_sin_f32(right_vmc.theta);//机体b系的速度
 		
-		wl= -chassis_move.wheel_motor[1].Data.Velocity+INS.Gyro[0]+left_vmc.d_alpha;//左边驱动轮转子相对大地角速度，这里定义的是顺时针为正
+		wl= -DM_6215_Motor_left.Data.Velocity+INS.Gyro[0]+left_vmc.d_alpha;//左边驱动轮转子相对大地角速度，这里定义的是顺时针为正
 		vlb=wl*0.0603f+left_vmc.L0*left_vmc.d_theta*arm_cos_f32(left_vmc.theta)+left_vmc.d_L0*arm_sin_f32(left_vmc.theta);//机体b系的速度
 		
 		aver_v=(vrb-vlb)/2.0f;//取平均
@@ -72,8 +82,9 @@ void 	Observe_task(void)
 		chassis_move.x_filter=chassis_move.x_filter+chassis_move.v_filter*((float)OBSERVE_TIME/1000.0f);
 		
 		//如果想直接用轮子速度，不做融合的话可以这样
-		chassis_move.v_filter = (-chassis_move.wheel_motor[0].Data.Velocity + chassis_move.wheel_motor[1].Data.Velocity)*(0.0603f)/2.0f;//0.0603是轮子半径，电机反馈的是角速度，乘半径后得到线速度，数学模型中定义的是轮子顺时针为正，所以要乘个负号
-		chassis_move.x_filter = chassis_move.x_filter + chassis_move.v_filter*((float)OBSERVE_TIME/1000.0f);
+		v_origin = (-DM_6215_Motor_right.Data.Velocity + DM_6215_Motor_left.Data.Velocity)*(0.0603f)/2.0f;//0.0603是轮子半径，电机反馈的是角速度，乘半径后得到线速度，数学模型中定义的是轮子顺时针为正，所以要乘个负号
+		chassis_move.v_filter = OLS_Smooth(&v_smoother, OBSERVE_dt, v_origin);
+		chassis_move.x_filter = chassis_move.x_filter + chassis_move.v_filter*OBSERVE_dt;
 		
 		osDelay(OBSERVE_TIME);
 	}

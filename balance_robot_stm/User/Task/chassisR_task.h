@@ -28,10 +28,7 @@
 #define Mg 13.0f
 typedef struct
 {
-	//右前电机为0号
-  DM_Motor_Info_Typedef joint_motor[4];
-  DM_Motor_Info_Typedef wheel_motor[2];
-	
+
 	float v_set;//期望速度，单位是m/s
 	float target_v;
 	float x_set;//期望位置，单位是m
@@ -52,11 +49,10 @@ typedef struct
 	float v_filter;//滤波后的车体速度，单位是m/s
 	float x_filter;//滤波后的车体位置，单位是m
 	
-	float myPithR;
-	float myPithGyroR;
+	float myPith;
+	float myPithGyro;
 	float Pitch_smooth; //平滑后的信号
-	float myPithL;
-	float myPithGyroL;
+	float DPitch_smooth; //平滑后的信号
 	float roll;
 	float total_yaw;
 	float theta_err;//两腿夹角误差

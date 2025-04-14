@@ -46,3 +46,8 @@ balance_robot_stm\vmc_calc.o: ../Drivers/CMSIS/DSP/Include/arm_math.h
 balance_robot_stm\vmc_calc.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 balance_robot_stm\vmc_calc.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
 balance_robot_stm\vmc_calc.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+balance_robot_stm\vmc_calc.o: ../User/Task/chassisR_task.h
+balance_robot_stm\vmc_calc.o: ../User/Device/Motor.h
+balance_robot_stm\vmc_calc.o: ../User/Bsp/bsp_can.h
+balance_robot_stm\vmc_calc.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+balance_robot_stm\vmc_calc.o: ../User/Algorithm/pid.h

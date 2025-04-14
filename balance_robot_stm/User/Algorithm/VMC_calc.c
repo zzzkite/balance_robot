@@ -1,4 +1,5 @@
 #include "VMC_calc.h"
+#include "chassisR_task.h"
 
 void VMC_init(vmc_leg_t *vmc)//给杆长赋值
 {
@@ -9,13 +10,12 @@ void VMC_init(vmc_leg_t *vmc)//给杆长赋值
 	vmc->l4=0.0725f;//单位为m
 }
 
-
 void VMC_calc_1_right(vmc_leg_t *vmc,INS_t *ins,float dt)//计算theta和d_theta给lqr用，同时也计算腿长L0
 {		
-		static float PitchR=0.0f;
-	  static float PithGyroR=0.0f;
-	  PitchR=-ins->Pitch;//低头负数则和仿真方向一致
-	  PithGyroR=-ins->Gyro[0];
+//		static float PitchR=0.0f;
+//	  static float PithGyroR=0.0f;
+//	  PitchR=-ins->Pitch;//低头负数则和仿真方向一致
+//	  PithGyroR=-ins->Gyro[0];
 	
 	  vmc->YD = vmc->l4*arm_sin_f32(vmc->phi4);//D的y坐标
 	  vmc->YB = vmc->l1*arm_sin_f32(vmc->phi1);//B的y坐标
@@ -48,8 +48,8 @@ void VMC_calc_1_right(vmc_leg_t *vmc,INS_t *ins,float dt)//计算theta和d_theta给l
 		vmc->d_alpha=0.0f-vmc->d_phi0 ;
 		
 		//建模是基于机体水平，转化为世界系下的角度时需要消去机体Pitch带来的影响
-		vmc->theta=pi/2.0f-PitchR-vmc->phi0;//得到状态变量1
-		vmc->d_theta=(-PithGyroR-vmc->d_phi0);//得到状态变量2
+		vmc->theta= pi/2.0f- chassis_move.Pitch_smooth - vmc->phi0;//得到状态变量1
+		vmc->d_theta=( -chassis_move.DPitch_smooth - vmc->d_phi0);//得到状态变量2
 		
 		vmc->last_phi0=vmc->phi0 ;
     
@@ -66,10 +66,10 @@ void VMC_calc_1_right(vmc_leg_t *vmc,INS_t *ins,float dt)//计算theta和d_theta给l
 
 void VMC_calc_1_left(vmc_leg_t *vmc,INS_t *ins,float dt)//计算theta和d_theta给lqr用，同时也计算腿长L0
 {		
-	  static float PitchL=0.0f;
-	  static float PithGyroL=0.0f;
-	  PitchL=-ins->Pitch;
-	  PithGyroL=-ins->Gyro[0];
+//	  static float PitchL=0.0f;
+//	  static float PithGyroL=0.0f;
+//	  PitchL=-ins->Pitch;
+//	  PithGyroL=-ins->Gyro[0];
 	
 		vmc->YD = vmc->l4*arm_sin_f32(vmc->phi4);//D的y坐标
 	  vmc->YB = vmc->l1*arm_sin_f32(vmc->phi1);//B的y坐标
@@ -100,8 +100,8 @@ void VMC_calc_1_left(vmc_leg_t *vmc,INS_t *ins,float dt)//计算theta和d_theta给lq
 		vmc->d_phi0=(vmc->phi0-vmc->last_phi0)/dt;//计算phi0变化率，d_phi0用于计算lqr需要的d_theta
 		vmc->d_alpha=0.0f-vmc->d_phi0 ;
 		
-		vmc->theta= pi/2.0f - PitchL - vmc->phi0;//得到状态变量1，消去了pitch倾斜的影响，根据测试方向这里应该为加号
-		vmc->d_theta=(-PithGyroL - vmc->d_phi0);//得到状态变量2
+		vmc->theta= pi/2.0f - chassis_move.Pitch_smooth - vmc->phi0;//得到状态变量1，消去了pitch倾斜的影响，根据测试方向这里应该为加号
+		vmc->d_theta=( -chassis_move.DPitch_smooth - vmc->d_phi0);//得到状态变量2
 		
 		vmc->last_phi0=vmc->phi0 ;
 

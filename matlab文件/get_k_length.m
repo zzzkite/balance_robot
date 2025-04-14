@@ -54,12 +54,12 @@ A = jacobian([theta1 ans_dott.theta2 x1 ans_dott.x2 phi1 ans_dott.phi2],z');
 B = jacobian([theta1 ans_dott.theta2 x1 ans_dott.x2 phi1 ans_dott.phi2],u');
 A=subs(A,{theta theta1 x1 phi phi1 T Tp mp mw M Iw Ip Im R l L Lm g},{0 0 0 0 0 0 0 mp1 mw1 M1 Iw1 Ip1 Im1 R1 l1 L1 Lm1 g1});
 B=subs(B,{theta theta1 x1 phi phi1 T Tp mp mw M Iw Ip Im R l L Lm g},{0 0 0 0 0 0 0 mp1 mw1 M1 Iw1 Ip1 Im1 R1 l1 L1 Lm1 g1});
-A=double(A)
-B=double(B)
+A=double(A);
+B=double(B);
 
 % LQR控制器计算
-Q=diag([1 0.1 10 20 300 0.6]);
-R=[20 0;0,1];                %T Tp      
+Q=diag([1 0.1 10 1 500 1]);
+R=[20 0;0,1];                %T Tp  
 K = lqr(A,B,Q,R);
 
 end

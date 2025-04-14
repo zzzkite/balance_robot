@@ -19,6 +19,8 @@
 #include "user_lib.h"
 #include "Motor.h"
 #include "bsp_can.h"
+#include "bsp_dwt.h"
+
 ps2data_t ps2data;
 
 uint16_t Handkey;	// 按键值读取，零时存储。
@@ -47,12 +49,16 @@ uint16_t MASK[]={
 //extern chassis_t chassis_move;
 extern INS_t INS;
 uint32_t PS2_TIME=10;//ps2手柄任务周期是10ms
+uint32_t PS2_TIME_DWT; //dwt获取的系统时间计数器
+float ps2_dt;//积分计时器
+	
 void pstwo_task(void)
 {		
 	 PS2_SetInit();
 
    while(1)
 	 {
+		 ps2_dt = DWT_GetDeltaT(&PS2_TIME_DWT);//获取系统时间
 		 if(Data[1]!=0x73)
 		 {
 		  PS2_SetInit();
@@ -60,7 +66,7 @@ void pstwo_task(void)
 
 	   PS2_data_read(&ps2data);//读数据
 //		 PS2_data_process(&ps2data,&chassis_move,(float)PS2_TIME/1000.0f);//处理数据，设置期望数据
-		 PS2_data_move(&ps2data,&chassis_move,(float)PS2_TIME/1000.0f);
+		 PS2_data_move(&ps2data,&chassis_move,ps2_dt);
 	   osDelay(PS2_TIME);
 	 }
 }
@@ -137,12 +143,15 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 	{
 		chassis_move.start_flag = 0;// 底盘未就绪
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, Motor_Enable);
-		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, Motor_Enable);
 		DWT_Delay(0.001f); 
+		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, Motor_Enable);
+		DWT_Delay(0.001f);  
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftback, Motor_Enable);
+		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightback, Motor_Enable);
 		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_6215_Motor_left, Motor_Enable);
+		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_6215_Motor_right, Motor_Enable);
 	}
 	
@@ -150,17 +159,20 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 	{
 		chassis_move.start_flag = 0;// 底盘未就绪
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, Motor_Disable);
+		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, Motor_Disable);
 		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftback, Motor_Disable);
+		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightback, Motor_Disable);
 		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_6215_Motor_left, Motor_Disable);
+		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_6215_Motor_right, Motor_Disable);		
 	}
 	
-//	if(chassis_move.start_flag == 1)
-//	{
+	if(chassis_move.start_flag == 1)
+	{
 		chassis->target_v=((float)(data->ry-128))*(-0.008f);//往前大于0
 		slope_following(&chassis->target_v,&chassis->v_set,0.005f);	//	坡度跟随
 		chassis->x_set = chassis->x_filter; //不控位移
@@ -179,7 +191,7 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 		chassis->leg_right_set = chassis->leg_set;
 		mySaturate(&chassis->leg_left_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
 		mySaturate(&chassis->leg_right_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
-//	}
+	}
 }
 //extern vmc_leg_t right;			
 //extern vmc_leg_t left;	

@@ -24,8 +24,8 @@
 #include "bsp_dwt.h"
 
 float LQR_K_R[12]={ 
-   -2.0983 , -0.2576   , -0.7013 ,  -1.3023 ,    3.0014  ,  0.3509,
-    1.5783,   0.1444  ,   0.4046  ,  0.7373  , 17.5852 ,  0.7476};
+   -1.6700,   -0.1876,   -0.7057,   -0.7484,    2.3083,    0.2481,
+    1.0421,    0.0576,    0.1998,    0.2066,   23.3252,    1.0649};
 
 //DM
 //float LQR_K_R[12]={ 
@@ -80,7 +80,9 @@ PidTypeDef LegR_Pid;//右腿的腿长pd
 PidTypeDef Tp_Pid;//防劈叉补偿pd
 PidTypeDef Turn_Pid;//转向pd
 PidTypeDef RollR_Pid; //ROLL补偿pd
-Ordinary_Least_Squares_t Pitch_smoother;
+Ordinary_Least_Squares_t Pitch_smoother; //pitch滤波器
+Ordinary_Least_Squares_t DPitch_smoother; //dpitch滤波器
+Ordinary_Least_Squares_t DThetaR_smoother; //dtheta滤波器
 uint32_t CHASSR_TIME_DWT; //dwt获取的系统时间
 float CHASSR_dt;
 uint32_t CHASSR_TIME=1;	//任务延时			
@@ -90,19 +92,21 @@ void ChassisR_task(void)
 	{//等待加速度收敛
 	  osDelay(1);	
 	}
-		chassis_move.start_flag = 0;// 底盘未就绪
-		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, Motor_Disable);
-		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, Motor_Disable);
-		osDelay(1);	
-		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftback, Motor_Disable);
-		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightback, Motor_Disable);
-		osDelay(1);	
-		DM_Motor_Command(&FDCAN1_TxFrame, &DM_6215_Motor_left, Motor_Disable);
-		DM_Motor_Command(&FDCAN2_TxFrame, &DM_6215_Motor_right, Motor_Disable);	
+	chassis_move.start_flag = 0;// 底盘未就绪
+	DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, Motor_Disable);
+	DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, Motor_Disable);
+	osDelay(1);	
+	DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftback, Motor_Disable);
+	DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightback, Motor_Disable);
+	osDelay(1);	
+	DM_Motor_Command(&FDCAN1_TxFrame, &DM_6215_Motor_left, Motor_Disable);
+	DM_Motor_Command(&FDCAN2_TxFrame, &DM_6215_Motor_right, Motor_Disable);	
   ChassisR_init(&chassis_move,&right_vmc,&LegR_Pid);//初始化右边两个关节电机和右边轮毂电机的id和控制模式、初始化腿部
   Pensation_init(&Tp_Pid,&Turn_Pid);//补偿pid初始化
 //	roll_pid_init(&RollR_Pid);
 	OLS_Init(&Pitch_smoother, 10);
+	OLS_Init(&DPitch_smoother, 3);
+	OLS_Init(&DThetaR_smoother, 50);
 	while(1)
 	{	
 		CHASSR_dt = DWT_GetDeltaT(&CHASSR_TIME_DWT);//获取系统时间
@@ -111,20 +115,20 @@ void ChassisR_task(void)
    
 		if(chassis_move.start_flag==1)	
 		{
-			DM_Motor_CAN_TxMessage_4310(&FDCAN2_TxFrame, &chassis_move.joint_motor[0], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.joint_motor[0].Control.Torque);
+			DM_Motor_CAN_TxMessage_4310(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, right_vmc.T1);
 			osDelay(CHASSR_TIME);
-			DM_Motor_CAN_TxMessage_4310(&FDCAN2_TxFrame, &chassis_move.joint_motor[1], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.joint_motor[1].Control.Torque);
+			DM_Motor_CAN_TxMessage_4310(&FDCAN2_TxFrame, &DM_4310_Motor_rightback, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, right_vmc.T2);
 			osDelay(CHASSR_TIME);
-			DM_Motor_CAN_TxMessage_6215(&FDCAN2_TxFrame, &chassis_move.wheel_motor[0], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.wheel_motor[0].Control.Torque);
+			DM_Motor_CAN_TxMessage_6215(&FDCAN2_TxFrame, &DM_6215_Motor_right, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, right_vmc.T);
 			osDelay(CHASSR_TIME);
 		}
 		else if(chassis_move.start_flag==0)	
 		{
-			DM_Motor_CAN_TxMessage_4310(&FDCAN2_TxFrame, &chassis_move.joint_motor[0], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
+			DM_Motor_CAN_TxMessage_4310(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
 			osDelay(CHASSR_TIME);
-			DM_Motor_CAN_TxMessage_4310(&FDCAN2_TxFrame, &chassis_move.joint_motor[1], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
+			DM_Motor_CAN_TxMessage_4310(&FDCAN2_TxFrame, &DM_4310_Motor_rightback, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
 			osDelay(CHASSR_TIME);
-			DM_Motor_CAN_TxMessage_6215(&FDCAN2_TxFrame, &chassis_move.wheel_motor[0], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
+			DM_Motor_CAN_TxMessage_6215(&FDCAN2_TxFrame, &DM_6215_Motor_right, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
 			osDelay(CHASSR_TIME);
 		}
 	
@@ -135,7 +139,7 @@ void ChassisR_init(chassis_t *chassis,vmc_leg_t *vmc,PidTypeDef *legr)
 {
   const static float legr_pid[3] = {LEG_PID_KP, LEG_PID_KI,LEG_PID_KD}; //腿长PID参数
 	VMC_init(vmc);//给杆长赋值
-	chassis->leg_set = 0.085;
+	chassis->leg_set = 0.10;
 //	chassis->leg_set = 0.18;//测试腿长PID使用
 	chassis->leg_right_set = chassis->leg_set;
 	chassis->leg_left_set = chassis->leg_set;
@@ -161,22 +165,19 @@ void roll_pid_init(PidTypeDef *roll_pid)
 }
 void chassisR_feedback_update(chassis_t *chassis,vmc_leg_t *vmc,INS_t *ins)
 {
-	//将电机反馈值获取到底盘结构体中
-	chassis->joint_motor[0] = DM_4310_Motor_rightfront;
-	chassis->joint_motor[1] = DM_4310_Motor_rightback;
-	chassis->wheel_motor[0] = DM_6215_Motor_right;
 	
-  vmc->phi1 = pi+chassis->joint_motor[0].Data.Position;
-	vmc->phi4 = chassis->joint_motor[1].Data.Position;
+  vmc->phi1 = pi + DM_4310_Motor_rightfront.Data.Position;
+	vmc->phi4 = DM_4310_Motor_rightback.Data.Position;
 		
-	chassis->myPithR = -ins->Pitch; //仿真中抬头为正，原数据是低头为正
-	chassis->myPithGyroR = -ins->Gyro[0]; //ins-Gyro0是低头增加
-	chassis->Pitch_smooth = OLS_Smooth(&Pitch_smoother, CHASSR_TIME*3, chassis->myPithR); //最小二乘平滑滤波处理
-	
+	chassis->myPith = 0.0f-ins->Pitch; //仿真中抬头为正，原数据是低头为正
+	chassis->myPithGyro = 0.0f-ins->Gyro[0]; //ins-Gyro0是低头增加
+	chassis->Pitch_smooth = OLS_Smooth(&Pitch_smoother, CHASSR_dt, chassis->myPith); //最小二乘平滑滤波处理
+	chassis->DPitch_smooth = OLS_Smooth(&DPitch_smoother, CHASSR_dt, chassis->myPithGyro);
+	vmc->d_theta_smooth = OLS_Smooth(&DThetaR_smoother, CHASSR_dt, vmc->d_theta);
 	
 	chassis->total_yaw=ins->YawTotalAngle;
 //	chassis->roll=-ins->Roll;
-	chassis->theta_err = left_vmc.theta - vmc->theta; //左-右
+	chassis->theta_err =  vmc->theta - left_vmc.theta; //右-左
 	
 //	if(ins->Pitch<(3.1415926f/6.0f)&&ins->Pitch>(-3.1415926f/6.0f)) //30度
 //	{//根据pitch角度判断倒地自起是否完成
@@ -188,7 +189,7 @@ uint8_t right_flag=0;
 extern uint8_t left_flag;
 void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *LQR_K,PidTypeDef *leg)
 {
-	VMC_calc_1_right(vmcr,ins,((float)CHASSR_TIME)*3.0f/1000.0f);//计算theta和d_theta给lqr用，同时也计算右腿长L0,该任务控制周期是3*0.001秒
+	VMC_calc_1_right(vmcr,ins,CHASSR_dt);//计算theta和d_theta给lqr用，同时也计算右腿长L0,该任务控制周期是3*0.001秒
 	
 	for(int i=0;i<12;i++)
 	{
@@ -200,30 +201,24 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 	chassis->turn_T = PID_Calc(&Turn_Pid, chassis->total_yaw, chassis->turn_set);//yaw轴pid计算
 //  chassis->turn_T=Turn_Pid.Kp*(chassis->turn_set - chassis->total_yaw) - Turn_Pid.Kd*ins->Gyro[2];//这样计算更稳一点
 	chassis->leg_tp=PID_Calc(&Tp_Pid, chassis->theta_err,0.0f);//防劈叉pid计算
-		
-	//测试/
 	
-
-	
-	//测试/
-	
-	chassis->wheel_motor[0].Control.Torque=(LQR_K[0]*(0.0f - vmcr->theta)
-																					+LQR_K[1]*(0.0f - vmcr->d_theta)
+	vmcr->T=(LQR_K[0]*(0.0f - vmcr->theta)
+																					+LQR_K[1]*(0.0f - vmcr->d_theta_smooth)
 																					+LQR_K[2]*(chassis->x_set - chassis->x_filter)
 																					+LQR_K[3]*(chassis->v_set - chassis->v_filter)
-																					+LQR_K[4]*(0.0f - chassis->myPithR)
-																					+LQR_K[5]*(0.0f - chassis->myPithGyroR));
+																					+LQR_K[4]*(0.0f - chassis->Pitch_smooth)
+																					+LQR_K[5]*(0.0f - chassis->DPitch_smooth));
 	
 	//右边髋关节输出力矩				
 	vmcr->Tp=(LQR_K[6]*(0.0f - vmcr->theta)
-					+LQR_K[7]*(0.0f - vmcr->d_theta)
+					+LQR_K[7]*(0.0f - vmcr->d_theta_smooth)
 					+LQR_K[8]*(chassis->x_set - chassis->x_filter)
 					+LQR_K[9]*(chassis->v_set - chassis->v_filter)
-					+LQR_K[10]*(0.0f - chassis->myPithR)
-					+LQR_K[11]*(0.0f - chassis->myPithGyroR));
+					+LQR_K[10]*(0.0f - chassis->Pitch_smooth)
+					+LQR_K[11]*(0.0f - chassis->DPitch_smooth));
 				
-	chassis->wheel_motor[0].Control.Torque = chassis->wheel_motor[0].Control.Torque + chassis->turn_T;	//轮毂电机输出力矩
-	mySaturate(&chassis->wheel_motor[0].Control.Torque,-1.0f,1.0f);	
+	vmcr->T = - (vmcr->T + chassis->turn_T);	//轮毂电机输出力矩  根据电机正方向输出值取负号：
+	mySaturate(&vmcr->T, -1.0f, 1.0f);
 	vmcr->Tp = vmcr->Tp + chassis->leg_tp;//髋关节输出力矩
 
 
@@ -267,8 +262,9 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
   mySaturate(&vmcr->torque_set[1],-3.0f,3.0f);	
 	mySaturate(&vmcr->torque_set[0],-3.0f,3.0f);		
 	
-	chassis->joint_motor[0].Control.Torque = vmcr->torque_set[0];
-	chassis->joint_motor[1].Control.Torque = vmcr->torque_set[1];
+	vmcr->T1 = vmcr->torque_set[0];
+	vmcr->T2 = vmcr->torque_set[1];
+	
 }
 
 void mySaturate(float *in,float min,float max)

@@ -43,9 +43,13 @@ typedef struct
 
 	float F0;
 	float Tp;
+	float T;
+	float T1;
+	float T2;
 	
 	float theta;
 	float d_theta;//theta的一阶导数
+	float d_theta_smooth;//平滑滤波后的dtheta
 	float last_d_theta;
 	float dd_theta;//theta的二阶导数
 	

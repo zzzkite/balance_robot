@@ -84,7 +84,7 @@ typedef struct
 	uint16_t ID; //不知道这啥ID
   Motor_CANFrameInfo_typedef CANFrameInfo; //电机发送ID和接收ID
 	DM_Motor_Data_Typedef Data; //反馈数据
-	DM_Motor_Control_Typedef Control; //输出力矩
+	float T; //输出力矩
 }DM_Motor_Info_Typedef;
 
 

@@ -17,12 +17,13 @@
   */
 	
 #include "chassisL_task.h"
-
+#include "bsp_dwt.h"
+#include "user_lib.h"
 vmc_leg_t left_vmc;
 
 float LQR_K_L[12]={ 
-   -2.0983 , -0.2576   , -0.7013 ,  -1.3023 ,    3.0014  ,  0.3509,
-    1.5783,   0.1444  ,   0.4046  ,  0.7373  , 17.5852 ,  0.7476};
+   -1.6700,   -0.1876,   -0.7057,   -0.7484,    2.3083,    0.2481,
+    1.0421,    0.0576,    0.1998,    0.2066,   23.3252,    1.0649};
 
 //dm
 //float LQR_K_L[12]={ 
@@ -33,7 +34,9 @@ float LQR_K_L[12]={
 		
 PidTypeDef LegL_Pid;
 extern INS_t INS;
-
+Ordinary_Least_Squares_t DThetaL_smoother; //dtheta滤波器
+uint32_t CHASSL_TIME_DWT; //dwt获取的系统时间
+float CHASSL_dt;
 uint32_t CHASSL_TIME=1;				
 void ChassisL_task(void)
 {
@@ -42,29 +45,29 @@ void ChassisL_task(void)
 	  osDelay(1);	
 	}	
   ChassisL_init(&chassis_move,&left_vmc,&LegL_Pid);//初始化左边两个关节电机和左边轮毂电机的id和控制模式、初始化腿部
-	
+	OLS_Init(&DThetaL_smoother, 50);
 	while(1)
 	{	
+		CHASSL_dt = DWT_GetDeltaT(&CHASSL_TIME_DWT);//获取系统时间
 		chassisL_feedback_update(&chassis_move,&left_vmc,&INS);//更新数据
-		
 		chassisL_control_loop(&chassis_move,&left_vmc,&INS,LQR_K_L,&LegL_Pid);//控制计算
    		
     if(chassis_move.start_flag==1)	
 		{
-			DM_Motor_CAN_TxMessage_4310(&FDCAN1_TxFrame, &chassis_move.joint_motor[3], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.joint_motor[3].Control.Torque);// LeftFront
+			DM_Motor_CAN_TxMessage_4310(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, left_vmc.T1);// LeftFront
 			osDelay(CHASSL_TIME);
-			DM_Motor_CAN_TxMessage_4310(&FDCAN1_TxFrame, &chassis_move.joint_motor[2], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.joint_motor[2].Control.Torque);// LeftBack
+			DM_Motor_CAN_TxMessage_4310(&FDCAN1_TxFrame, &DM_4310_Motor_leftback, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, left_vmc.T2);// LeftBack
 			osDelay(CHASSL_TIME);
-			DM_Motor_CAN_TxMessage_6215(&FDCAN1_TxFrame, &chassis_move.wheel_motor[1], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, chassis_move.wheel_motor[1].Control.Torque);
+			DM_Motor_CAN_TxMessage_6215(&FDCAN1_TxFrame, &DM_6215_Motor_left, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, left_vmc.T);
 			osDelay(CHASSL_TIME);
 		}
 		else if(chassis_move.start_flag==0)	
 		{
-			DM_Motor_CAN_TxMessage_4310(&FDCAN1_TxFrame, &chassis_move.joint_motor[3], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
+			DM_Motor_CAN_TxMessage_4310(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
 			osDelay(CHASSL_TIME);
-			DM_Motor_CAN_TxMessage_4310(&FDCAN1_TxFrame, &chassis_move.joint_motor[2], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
+			DM_Motor_CAN_TxMessage_4310(&FDCAN1_TxFrame, &DM_4310_Motor_leftback, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
 			osDelay(CHASSL_TIME);
-			DM_Motor_CAN_TxMessage_6215(&FDCAN1_TxFrame, &chassis_move.wheel_motor[1], MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
+			DM_Motor_CAN_TxMessage_6215(&FDCAN1_TxFrame, &DM_6215_Motor_left, MIT_Mode, 0.0f, 0.0f,0.0f, 0.0f, 0.0f);
 			osDelay(CHASSL_TIME);
 		}
 	}
@@ -79,16 +82,10 @@ void ChassisL_init(chassis_t *chassis,vmc_leg_t *vmc,PidTypeDef *legl)
 
 void chassisL_feedback_update(chassis_t *chassis,vmc_leg_t *vmc,INS_t *ins)
 {
-		//将电机反馈值获取到底盘结构体中
-	chassis->joint_motor[3] = DM_4310_Motor_leftfront;
-	chassis->joint_motor[2] = DM_4310_Motor_leftback;
-	chassis->wheel_motor[1] = DM_6215_Motor_left;
 	
-  vmc->phi1 = pi-chassis->joint_motor[3].Data.Position;
-	vmc->phi4 = -chassis->joint_motor[2].Data.Position;
-		
-//	chassis->myPithL=0.0f-ins->Pitch;
-//	chassis->myPithGyroL=0.0f-ins->Gyro[0];
+  vmc->phi1 = pi - DM_4310_Motor_leftfront.Data.Position;
+	vmc->phi4 = -DM_4310_Motor_leftback.Data.Position;
+	vmc->d_theta_smooth = OLS_Smooth(&DThetaL_smoother, CHASSL_dt, vmc->d_theta);
 	
 }
 
@@ -96,32 +93,30 @@ extern uint8_t right_flag;
 uint8_t left_flag;
 void chassisL_control_loop(chassis_t *chassis,vmc_leg_t *vmcl,INS_t *ins,float *LQR_K,PidTypeDef *leg)
 {
-	VMC_calc_1_left(vmcl,ins,((float)CHASSL_TIME)*3.0f/1000.0f);//计算theta和d_theta给lqr用，同时也计算左腿长L0,该任务控制周期是3*0.001秒
+	VMC_calc_1_left(vmcl,ins,CHASSL_dt);//计算theta和d_theta给lqr用，同时也计算左腿长L0,该任务控制周期是3*0.001秒
 	
 //	for(int i=0;i<12;i++)
 //	{
 //		LQR_K[i]=LQR_K_calc(&Poly_Coefficient[i][0],vmcl->L0 );	
 //	}
 			
-	chassis->wheel_motor[1].Control.Torque=(LQR_K[0]*(0.0f - vmcl->theta)
-																					+LQR_K[1]*(0.0f - vmcl->d_theta)
+	vmcl->T=(LQR_K[0]*(0.0f - vmcl->theta)
+																					+LQR_K[1]*(0.0f - vmcl->d_theta_smooth)
 																					+LQR_K[2]*(chassis->x_set - chassis->x_filter)
 																					+LQR_K[3]*(chassis->v_set - chassis->v_filter)
-																					+LQR_K[4]*(0.0f - chassis->myPithR)
-																					+LQR_K[5]*(0.0f - chassis->myPithGyroR));
+																					+LQR_K[4]*(0.0f - chassis->Pitch_smooth)
+																					+LQR_K[5]*(0.0f - chassis->DPitch_smooth));
 	
 	//右边髋关节输出力矩				
 	vmcl->Tp=(LQR_K[6]*(0.0f - vmcl->theta)
-					+LQR_K[7]*(0.0f - vmcl->d_theta)
+					+LQR_K[7]*(0.0f - vmcl->d_theta_smooth)
 					+LQR_K[8]*(chassis->x_set - chassis->x_filter)
 					+LQR_K[9]*(chassis->v_set - chassis->v_filter)
-					+LQR_K[10]*(0.0f - chassis->myPithR)
-					+LQR_K[11]*(0.0f - chassis->myPithGyroR));
+					+LQR_K[10]*(0.0f - chassis->Pitch_smooth)
+					+LQR_K[11]*(0.0f - chassis->DPitch_smooth));
 	 		
-	chassis->wheel_motor[1].Control.Torque = chassis->wheel_motor[1].Control.Torque - chassis->turn_T;	//轮毂电机输出力矩，yaw补偿取负
-	//根据电机正方向输出值取负号：
-	chassis->wheel_motor[1].Control.Torque = -chassis->wheel_motor[1].Control.Torque;
-	mySaturate(&chassis->wheel_motor[1].Control.Torque,-1.0f,1.0f);	
+	vmcl->T = vmcl->T - chassis->turn_T;	//轮毂电机输出力矩，yaw补偿取负
+	mySaturate(&vmcl->T,-1.0f,1.0f);	
 	vmcl->Tp = vmcl->Tp - chassis->leg_tp;//髋关节输出力矩，防劈叉补偿取负
 	vmcl->F0=10.5f/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0, chassis->leg_right_set) - chassis->now_roll_set;//前馈+pd，这里ROLL补偿的正负方向需要测试
 //	vmcl->F0=+ PID_Calc(leg,vmcl->L0, chassis->leg_right_set) - chassis->now_roll_set;//测试腿长控制用
@@ -161,8 +156,8 @@ void chassisL_control_loop(chassis_t *chassis,vmc_leg_t *vmcl,INS_t *ins,float *
 	mySaturate(&vmcl->torque_set[0],-3.0f,3.0f);	
 			
 	//根据电机输出方向左边需要取负号
-	chassis->joint_motor[3].Control.Torque = -vmcl->torque_set[0];
-	chassis->joint_motor[2].Control.Torque = -vmcl->torque_set[1];
+	vmcl->T1 = -vmcl->torque_set[0];
+	vmcl->T2 = -vmcl->torque_set[1];
 }
 void jump_loop_l(chassis_t *chassis,vmc_leg_t *vmcl,PidTypeDef *leg)
 {
