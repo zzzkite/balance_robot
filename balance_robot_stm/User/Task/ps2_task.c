@@ -175,22 +175,22 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 	{
 		chassis->target_v=((float)(data->ry-128))*(-0.008f);//往前大于0
 		slope_following(&chassis->target_v,&chassis->v_set,0.005f);	//	坡度跟随
-		chassis->x_set = chassis->x_filter; //不控位移
-//		chassis->x_set=chassis->x_set+chassis->v_set*dt;
-//		chassis->turn_set=chassis->turn_set+(data->rx-127)*(-0.00025f);//往右大于0
+//		chassis->x_set = chassis->x_filter; //不控位移
+		chassis->x_set = chassis->x_set + chassis->v_set*dt;
+		chassis->turn_set=chassis->turn_set+(data->rx-127)*(-0.00025f);//往右大于0
 	  			
 		//腿长变化
-		chassis->leg_set=chassis->leg_set+((float)(data->ly-128))*(-0.000003f);
-		mySaturate(&chassis->leg_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
-//		chassis->roll_target= ((float)(data->lx-127))*(0.0025f);
-//		slope_following(&chassis->roll_target,&chassis->roll_set,0.0075f);
+		chassis->leg_set=chassis->leg_set+((float)(data->ly-128))*(-0.000006f);
+		mySaturate(&chassis->leg_set,0.085f,0.2f);//腿长限幅在0.085m到0.18m之间
+		chassis->roll_target= ((float)(data->lx-127))*(0.0025f);
+		slope_following(&chassis->roll_target,&chassis->roll_set,0.0075f);
 
 //		jump_key(chassis,data);
 
 		chassis->leg_left_set = chassis->leg_set;
 		chassis->leg_right_set = chassis->leg_set;
-		mySaturate(&chassis->leg_left_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
-		mySaturate(&chassis->leg_right_set,0.085f,0.18f);//腿长限幅在0.085m到0.18m之间
+		mySaturate(&chassis->leg_left_set,0.085f,0.2f);//腿长限幅在0.085m到0.18m之间
+		mySaturate(&chassis->leg_right_set,0.085f,0.2f);//腿长限幅在0.085m到0.18m之间
 	}
 }
 //extern vmc_leg_t right;			

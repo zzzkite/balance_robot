@@ -24,8 +24,8 @@
 #include "bsp_dwt.h"
 
 float LQR_K_R[12]={ 
-   -1.6700,   -0.1876,   -0.7057,   -0.7484,    2.3083,    0.2481,
-    1.0421,    0.0576,    0.1998,    0.2066,   23.3252,    1.0649};
+     -2.0569,  -0.2391,  -1.2157,  -1.1223,   3.0694,   0.3163, 
+      2.0377,   0.1777,   0.6645,   0.6149,  22.2978,   0.9860};
 
 //DM
 //float LQR_K_R[12]={ 
@@ -33,18 +33,18 @@ float LQR_K_R[12]={
 //    2.5538,   0.2718  ,  1.5728  ,  2.2893  , 12.1973 ,   0.4578};
 
 float Poly_Coefficient[12][4] = {
-	{-50.303422f,	42.871515f,	-19.622444f,	-0.282898f},
-	{1.728530f,	-0.899582f,	-1.625804f,	-0.043916f},
-	{-1.767832f,	0.915577f,	-0.154199f,	-0.698629f},
-	{5.626709f,	-3.301603f,	0.407135f,	-0.762189f},
-	{-261.924740f,	160.425293f,	-36.711490f,	4.402317f},
-	{-11.611978f,	7.037194f,	-1.572791f,	0.336819f},
-	{-100.579345f,	59.147132f,	-10.724612f,	1.579785f},
-	{-22.828187f,	14.583283f,	-3.566271f,	0.267432f},
-	{-128.000735f,	75.084749f,	-15.251081f,	1.017261f},
-	{-139.739460f,	81.752795f,	-16.569759f,	1.093032f},
-	{373.444347f,	-214.032169f,	43.028202f,	21.044632f},
-	{26.364638f,	-15.031294f,	2.925414f,	0.912615f}
+	{-42.124506f,	36.915383f,	-19.303419f,	-0.633499f},
+	{1.550707f,	-1.099936f,	-1.900263f,	-0.055084f},
+	{-1.976479f,	1.021392f,	-0.170849f,	-1.215439f},
+	{25.918522f,	-15.539308f,	2.842674f,	-1.255553f},
+	{-290.208175f,	179.084258f,	-41.304206f,	5.037305f},
+	{-14.526810f,	8.865696f,	-1.967163f,	0.407429f},
+	{-192.902491f,	115.998683f,	-23.615335f,	2.765599f},
+	{-24.039732f,	15.463013f,	-3.849650f,	0.294921f},
+	{-169.753523f,	100.690902f,	-20.753224f,	1.392104f},
+	{-163.292315f,	95.850087f,	-19.506125f,	1.272044f},
+	{485.632225f,	-279.389768f,	56.239175f,	20.097967f},
+	{33.642520f,	-19.313640f,	3.802733f,	0.852140f}
 };
 
 extern vmc_leg_t left_vmc;	
@@ -79,10 +79,11 @@ void ChassisR_task(void)
 	DM_Motor_Command(&FDCAN2_TxFrame, &DM_6215_Motor_right, Motor_Disable);	
   ChassisR_init(&chassis_move,&right_vmc,&LegR_Pid);//初始化右边两个关节电机和右边轮毂电机的id和控制模式、初始化腿部
   Pensation_init(&Tp_Pid,&Turn_Pid);//补偿pid初始化
-//	roll_pid_init(&RollR_Pid);
-	OLS_Init(&Pitch_smoother, 10);
+	roll_pid_init(&RollR_Pid);
+	OLS_Init(&Pitch_smoother, 5
+	);
 	OLS_Init(&DPitch_smoother, 3);
-	OLS_Init(&DThetaR_smoother, 50);
+	OLS_Init(&DThetaR_smoother, 3);
 	while(1)
 	{	
 		CHASSR_dt = DWT_GetDeltaT(&CHASSR_TIME_DWT);//获取系统时间
@@ -152,7 +153,7 @@ void chassisR_feedback_update(chassis_t *chassis,vmc_leg_t *vmc,INS_t *ins)
 	vmc->d_theta_smooth = OLS_Smooth(&DThetaR_smoother, CHASSR_dt, vmc->d_theta);
 	
 	chassis->total_yaw=ins->YawTotalAngle;
-//	chassis->roll=-ins->Roll;
+	chassis->roll=-ins->Roll;
 	chassis->theta_err =  vmc->theta - left_vmc.theta; //右-左
 	
 //	if(ins->Pitch<(3.1415926f/6.0f)&&ins->Pitch>(-3.1415926f/6.0f)) //30度
@@ -170,11 +171,11 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 	for(int i=0;i<12;i++)
 	{
 		// 进行完定腿长测试后再测试变腿长
-//		LQR_K[i]=LQR_K_calc(&Poly_Coefficient[i][0],vmcr->L0 );	
+		LQR_K[i]=LQR_K_calc(&Poly_Coefficient[i][0],vmcr->L0 );	
 	}
 		
-	chassis->turn_T = PID_Calc(&Turn_Pid, chassis->total_yaw, chassis->turn_set);//yaw轴pid计算
-//  chassis->turn_T=Turn_Pid.Kp*(chassis->turn_set - chassis->total_yaw) - Turn_Pid.Kd*ins->Gyro[2];//这样计算更稳一点
+//	chassis->turn_T = PID_Calc(&Turn_Pid, chassis->total_yaw, chassis->turn_set);//yaw轴pid计算
+  chassis->turn_T=Turn_Pid.Kp*(chassis->turn_set - chassis->total_yaw) - Turn_Pid.Kd*ins->Gyro[2];//这样计算更稳一点
 	chassis->leg_tp=PID_Calc(&Tp_Pid, chassis->theta_err,0.0f);//防劈叉pid计算
 	
 	vmcr->T=(LQR_K[0]*(0.0f - vmcr->theta)
@@ -197,10 +198,10 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 	vmcr->Tp = vmcr->Tp + chassis->leg_tp;//髋关节输出力矩
 
 
-//	chassis->now_roll_set = PID_Calc(&RollR_Pid,chassis->roll,chassis->roll_set);
+	chassis->now_roll_set = PID_Calc(&RollR_Pid,chassis->roll,chassis->roll_set);
 
 
-	vmcr->F0=10.5f/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0, chassis->leg_right_set) + chassis->now_roll_set;//前馈+pd，这里ROLL补偿的正负方向需要测试
+	vmcr->F0=10.5f/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0, chassis->leg_right_set) - chassis->now_roll_set;//前馈+pd，这里ROLL补偿的正负方向需要测试
 //	vmcr->F0= PID_Calc(leg,vmcr->L0, chassis->leg_right_set) + chassis->now_roll_set;//测试腿长控制用
 //	jump_loop_r(chassis,vmcr,leg);
 		

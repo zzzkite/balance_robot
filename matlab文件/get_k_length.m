@@ -58,8 +58,27 @@ A=double(A);
 B=double(B);
 
 % LQR控制器计算
-Q=diag([1 0.1 10 1 500 1]);
+Q=diag([10 0.1 30 1 500 1]);
 R=[20 0;0,1];                %T Tp  
 K = lqr(A,B,Q,R);
+
+% 转置后按行优先展开
+K_row = K';
+K_row = K_row(:);
+
+% 打印为C语言数组格式
+fprintf('float LQR_K[%d]={\n    ', numel(K_row));
+for i = 1:numel(K_row)
+    if i < numel(K_row)
+        fprintf('%8.4f, ', K_row(i));
+    else
+        fprintf('%8.4f', K_row(i));
+    end
+    if mod(i, 6) == 0 && i < numel(K_row)
+        fprintf('\n    ');
+    end
+end
+fprintf('};\n');
+
 
 end

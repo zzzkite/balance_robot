@@ -61,7 +61,7 @@ void 	Observe_task(void)
 	static float vrb,vlb=0.0f;
 	static float aver_v=0.0f;
 	static float v_origin=0.0f;
-	OLS_Init(&v_smoother, 50);
+	OLS_Init(&v_smoother, 30);
 		
 	xvEstimateKF_Init(&vaEstimateKF);
 	

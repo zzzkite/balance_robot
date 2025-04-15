@@ -22,15 +22,15 @@
 vmc_leg_t left_vmc;
 
 float LQR_K_L[12]={ 
-   -1.6700,   -0.1876,   -0.7057,   -0.7484,    2.3083,    0.2481,
-    1.0421,    0.0576,    0.1998,    0.2066,   23.3252,    1.0649};
+     -2.0569,  -0.2391,  -1.2157,  -1.1223,   3.0694,   0.3163, 
+      2.0377,   0.1777,   0.6645,   0.6149,  22.2978,   0.9860};
 
 //dm
 //float LQR_K_L[12]={ 
 //-2.1954,   -0.2044  , -0.8826,   -1.3245,    1.2784  ,  0.1112,
 //    2.5538,   0.2718  ,  1.5728  ,  2.2893  , 12.1973 ,   0.4578};
 
-//extern float Poly_Coefficient[12][4];
+extern float Poly_Coefficient[12][4];
 		
 PidTypeDef LegL_Pid;
 extern INS_t INS;
@@ -95,10 +95,10 @@ void chassisL_control_loop(chassis_t *chassis,vmc_leg_t *vmcl,INS_t *ins,float *
 {
 	VMC_calc_1_left(vmcl,ins,CHASSL_dt);//计算theta和d_theta给lqr用，同时也计算左腿长L0,该任务控制周期是3*0.001秒
 	
-//	for(int i=0;i<12;i++)
-//	{
-//		LQR_K[i]=LQR_K_calc(&Poly_Coefficient[i][0],vmcl->L0 );	
-//	}
+	for(int i=0;i<12;i++)
+	{
+		LQR_K[i]=LQR_K_calc(&Poly_Coefficient[i][0],vmcl->L0 );	
+	}
 			
 	vmcl->T=(LQR_K[0]*(0.0f - vmcl->theta)
 																					+LQR_K[1]*(0.0f - vmcl->d_theta_smooth)
@@ -118,7 +118,7 @@ void chassisL_control_loop(chassis_t *chassis,vmc_leg_t *vmcl,INS_t *ins,float *
 	vmcl->T = vmcl->T - chassis->turn_T;	//轮毂电机输出力矩，yaw补偿取负
 	mySaturate(&vmcl->T,-1.0f,1.0f);	
 	vmcl->Tp = vmcl->Tp - chassis->leg_tp;//髋关节输出力矩，防劈叉补偿取负
-	vmcl->F0=10.5f/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0, chassis->leg_right_set) - chassis->now_roll_set;//前馈+pd，这里ROLL补偿的正负方向需要测试
+	vmcl->F0=10.5f/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0, chassis->leg_right_set) + chassis->now_roll_set;//前馈+pd，这里ROLL补偿的正负方向需要测试
 //	vmcl->F0=+ PID_Calc(leg,vmcl->L0, chassis->leg_right_set) - chassis->now_roll_set;//测试腿长控制用
 
 //	jump_loop_l(chassis,vmcl,leg); 	
