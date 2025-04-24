@@ -22,6 +22,8 @@
 #include "bsp_dwt.h"
 
 ps2data_t ps2data;
+extern vmc_leg_t left_vmc;
+extern void jump_key (chassis_t *chassis,ps2data_t *data);
 
 uint16_t Handkey;	// 按键值读取，零时存储。
 uint8_t Comd[2]={0x01,0x42};	//开始命令。请求数据
@@ -142,6 +144,7 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 	if(data->last_key!=4&&data->key==4)
 	{
 		chassis_move.start_flag = 0;// 底盘未就绪
+		chassis->recover_flag=0;
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, Motor_Enable);
 		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, Motor_Enable);
@@ -158,6 +161,7 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 	if(data->last_key!=10&&data->key==10)
 	{
 		chassis_move.start_flag = 0;// 底盘未就绪
+		chassis->recover_flag=0;
 		DM_Motor_Command(&FDCAN1_TxFrame, &DM_4310_Motor_leftfront, Motor_Disable);
 		DWT_Delay(0.001f); 
 		DM_Motor_Command(&FDCAN2_TxFrame, &DM_4310_Motor_rightfront, Motor_Disable);
@@ -175,7 +179,6 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 	{
 		chassis->target_v=((float)(data->ry-128))*(-0.008f);//往前大于0
 		slope_following(&chassis->target_v,&chassis->v_set,0.005f);	//	坡度跟随
-//		chassis->x_set = chassis->x_filter; //不控位移
 		chassis->x_set = chassis->x_set + chassis->v_set*dt;
 		chassis->turn_set=chassis->turn_set+(data->rx-127)*(-0.00025f);//往右大于0
 	  			
@@ -185,12 +188,28 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 		chassis->roll_target= ((float)(data->lx-127))*(0.0025f);
 		slope_following(&chassis->roll_target,&chassis->roll_set,0.0075f);
 
-//		jump_key(chassis,data);
+		jump_key(chassis,data);
 
 		chassis->leg_left_set = chassis->leg_set;
 		chassis->leg_right_set = chassis->leg_set;
 		mySaturate(&chassis->leg_left_set,0.085f,0.2f);//腿长限幅在0.085m到0.18m之间
 		mySaturate(&chassis->leg_right_set,0.085f,0.2f);//腿长限幅在0.085m到0.18m之间
+		
+		jump_key(chassis,data);
+
+		if(fabsf(chassis->last_leg_left_set-chassis->leg_left_set)>0.0001f || fabsf(chassis->last_leg_right_set-chassis->leg_right_set)>0.0001f)
+		{//遥控器控制腿长在变化
+			right_vmc.leg_flag=1;	//为1标志着腿长在主动伸缩(不包括自适应伸缩)，根据这个标志可以不进行离地检测，因为当腿长在主动伸缩时，离地检测会误判端为离地了
+      left_vmc.leg_flag=1;	 			
+		}
+		else
+		{
+			right_vmc.leg_flag=0;
+			left_vmc.leg_flag=0;
+		}
+		chassis->last_leg_set=chassis->leg_set;
+		chassis->last_leg_left_set=chassis->leg_left_set;
+		chassis->last_leg_right_set=chassis->leg_right_set;
 	}
 }
 //extern vmc_leg_t right;			
@@ -262,24 +281,24 @@ float acc_test =0.005f;
 //		
 //}
 
-//void jump_key (chassis_t *chassis,ps2data_t *data)
-//{
-//	if(data->key == 12)
-//	{
-//		if(++chassis->count_key>10)
-//		{
-//			if(chassis->jump_flag == 0)
-//			{
-//				chassis->jump_flag = 1;
-//				chassis->jump_leg = chassis->leg_set;
-//			}
-//		}
-//	}
-//	else
-//	{
-//		chassis->count_key = 0;
-//	}
-//}
+void jump_key (chassis_t *chassis,ps2data_t *data)
+{
+	if(data->key == 11)
+	{
+		if(++chassis->count_key>10)
+		{
+			if(chassis->jump_flag == 0)
+			{
+				chassis->jump_flag = 1;
+				chassis->jump_leg = chassis->leg_set;
+			}
+		}
+	}
+	else
+	{
+		chassis->count_key = 0;
+	}
+}
 
 
 

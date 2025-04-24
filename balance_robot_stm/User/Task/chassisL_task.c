@@ -101,30 +101,49 @@ void chassisL_control_loop(chassis_t *chassis,vmc_leg_t *vmcl,INS_t *ins,float *
 	}
 			
 	vmcl->T=(LQR_K[0]*(0.0f - vmcl->theta)
-																					+LQR_K[1]*(0.0f - vmcl->d_theta_smooth)
-																					+LQR_K[2]*(chassis->x_set - chassis->x_filter)
-																					+LQR_K[3]*(chassis->v_set - chassis->v_filter)
+																					+LQR_K[1]*(0.0f - vmcl->d_theta)
+																					+LQR_K[2]*(chassis->x_set - chassis->x_kfilter)
+																					+LQR_K[3]*(chassis->v_set - chassis->v_kfilter)
 																					+LQR_K[4]*(0.0f - chassis->Pitch_smooth)
-																					+LQR_K[5]*(0.0f - chassis->DPitch_smooth));
+																					+LQR_K[5]*(0.0f - chassis->myPithGyro));
 	
 	//右边髋关节输出力矩				
 	vmcl->Tp=(LQR_K[6]*(0.0f - vmcl->theta)
-					+LQR_K[7]*(0.0f - vmcl->d_theta_smooth)
-					+LQR_K[8]*(chassis->x_set - chassis->x_filter)
-					+LQR_K[9]*(chassis->v_set - chassis->v_filter)
+					+LQR_K[7]*(0.0f - vmcl->d_theta)
+					+LQR_K[8]*(chassis->x_set - chassis->x_kfilter)
+					+LQR_K[9]*(chassis->v_set - chassis->v_kfilter)
 					+LQR_K[10]*(0.0f - chassis->Pitch_smooth)
-					+LQR_K[11]*(0.0f - chassis->DPitch_smooth));
+					+LQR_K[11]*(0.0f - chassis->myPithGyro));
 	 		
 	vmcl->T = vmcl->T - chassis->turn_T;	//轮毂电机输出力矩，yaw补偿取负
 	mySaturate(&vmcl->T,-1.0f,1.0f);	
 	vmcl->Tp = vmcl->Tp - chassis->leg_tp;//髋关节输出力矩，防劈叉补偿取负
-	vmcl->F0=10.5f/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0, chassis->leg_right_set) + chassis->now_roll_set;//前馈+pd，这里ROLL补偿的正负方向需要测试
+	vmcl->F0=10.5f/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0, chassis->leg_left_set) + chassis->now_roll_set;//前馈+pd
 //	vmcl->F0=+ PID_Calc(leg,vmcl->L0, chassis->leg_right_set) - chassis->now_roll_set;//测试腿长控制用
 
-//	jump_loop_l(chassis,vmcl,leg); 	
+	jump_loop_l(chassis,vmcl,leg); 	
 
 	left_flag=ground_detectionL(vmcl,ins);//左腿离地检测
-//	
+	
+	//初步实现
+	if(chassis->recover_flag==0)
+	{		
+		if(left_flag && vmcl->leg_flag==0)
+		{
+			vmcl->T = 0.0f;
+			vmcl->Tp= LQR_K[6]*(0.0f - vmcl->theta) + LQR_K[7]*(0.0f - vmcl->d_theta);
+			chassis->x_kfilter=0.0f;//对位移清零
+			chassis->x_set=chassis->x_kfilter;
+			chassis->turn_set=chassis->total_yaw;
+			vmcl->Tp = vmcl->Tp - chassis->leg_tp;
+		}
+	}
+	else if(chassis->recover_flag)
+	{
+		vmcl->Tp=0.0f;
+		chassis->leg_left_set = 0.085f;
+		vmcl->F0=10.5f/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0, chassis->leg_left_set);
+	}
 //	 if(chassis->recover_flag==0)	
 //	 {//倒地自起不需要检测是否离地
 //		if(left_flag==1&&right_flag==1&&vmcl->leg_flag==0)
@@ -165,16 +184,16 @@ void jump_loop_l(chassis_t *chassis,vmc_leg_t *vmcl,PidTypeDef *leg)
 	{
 		if(chassis->jump_status_l == 0)
 		{
-			vmcl->F0= Mg/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0,0.07f) ;//前馈+pd
-			if(vmcl->L0<0.1f)
+			vmcl->F0= Mg/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0,chassis->jump_leg - 0.01f) ;//前馈+pd
+			if(vmcl->L0 < (chassis->jump_leg - 0.01f/2))
 			{
 				chassis->jump_time_l++;
 			}
 		}
 		else if(chassis->jump_status_l == 1)
 		{
-			vmcl->F0= Mg/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0,0.4f) ;//前馈+pd
-			if(vmcl->L0>0.16f)
+			vmcl->F0= Mg/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0,chassis->jump_leg + 0.05f) ;//前馈+pd
+			if(vmcl->L0 > (chassis->jump_leg + 0.05f/2))
 			{
 				chassis->jump_time_l++;
 			}
@@ -195,7 +214,7 @@ void jump_loop_l(chassis_t *chassis,vmc_leg_t *vmcl,PidTypeDef *leg)
 	}
 	else
 	{
-		vmcl->F0=Mg/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0,chassis->leg_left_set) + chassis->now_roll_set;//前馈+pd
+		vmcl->F0=10.5f/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0, chassis->leg_left_set) + chassis->now_roll_set;
 	}
 
 }

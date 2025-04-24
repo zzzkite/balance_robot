@@ -31,20 +31,19 @@ float LQR_K_R[12]={
 //float LQR_K_R[12]={ 
 //-2.1954,   -0.2044  , -0.8826,   -1.3245,    1.2784  ,  0.1112,
 //    2.5538,   0.2718  ,  1.5728  ,  2.2893  , 12.1973 ,   0.4578};
-
 float Poly_Coefficient[12][4] = {
-	{-42.124506f,	36.915383f,	-19.303419f,	-0.633499f},
-	{1.550707f,	-1.099936f,	-1.900263f,	-0.055084f},
-	{-1.976479f,	1.021392f,	-0.170849f,	-1.215439f},
-	{25.918522f,	-15.539308f,	2.842674f,	-1.255553f},
-	{-290.208175f,	179.084258f,	-41.304206f,	5.037305f},
-	{-14.526810f,	8.865696f,	-1.967163f,	0.407429f},
-	{-192.902491f,	115.998683f,	-23.615335f,	2.765599f},
-	{-24.039732f,	15.463013f,	-3.849650f,	0.294921f},
-	{-169.753523f,	100.690902f,	-20.753224f,	1.392104f},
-	{-163.292315f,	95.850087f,	-19.506125f,	1.272044f},
-	{485.632225f,	-279.389768f,	56.239175f,	20.097967f},
-	{33.642520f,	-19.313640f,	3.802733f,	0.852140f}
+	{-54.685014f,	48.604706f,	-27.952208f,	-0.655745f},
+	{1.573976f,	-1.278727f,	-3.288872f,	-0.029283f},
+	{-3.773472f,	2.233087f,	-0.465090f,	-0.963770f},
+	{11.105550f,	-6.460572f,	0.868989f,	-1.804690f},
+	{-246.176773f,	158.273088f,	-39.874819f,	6.325607f},
+	{-9.934494f,	6.222431f,	-1.449025f,	0.530439f},
+	{-475.341227f,	296.953289f,	-68.284557f,	9.614812f},
+	{-28.268943f,	17.889531f,	-4.169088f,	0.693767f},
+	{-174.265660f,	111.095361f,	-26.520291f,	2.865040f},
+	{-336.399787f,	211.242491f,	-49.235196f,	5.134614f},
+	{1538.636172f,	-914.149267f,	193.497910f,	30.599852f},
+	{94.798404f,	-57.554731f,	12.685180f,	0.917877f}
 };
 
 extern vmc_leg_t left_vmc;	
@@ -156,10 +155,14 @@ void chassisR_feedback_update(chassis_t *chassis,vmc_leg_t *vmc,INS_t *ins)
 	chassis->roll=-ins->Roll;
 	chassis->theta_err =  vmc->theta - left_vmc.theta; //右-左
 	
-//	if(ins->Pitch<(3.1415926f/6.0f)&&ins->Pitch>(-3.1415926f/6.0f)) //30度
-//	{//根据pitch角度判断倒地自起是否完成
-//		chassis->recover_flag=0;
-//	}
+	if(chassis->myPith<(3.1415926f/6.0f)&&chassis->myPith>(-3.1415926f/6.0f)) //30度
+		{//根据pitch角度判断倒地自起是否完成,0代表不需要自起
+		chassis->recover_flag=0;
+	}
+		else if(chassis->myPith>=(3.1415926f/6.0f)||chassis->myPith<=(-3.1415926f/6.0f))
+		{
+			chassis->recover_flag=1;
+		}
 }
 uint32_t count_roll = 0; 
 uint8_t right_flag=0;
@@ -179,19 +182,19 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 	chassis->leg_tp=PID_Calc(&Tp_Pid, chassis->theta_err,0.0f);//防劈叉pid计算
 	
 	vmcr->T=(LQR_K[0]*(0.0f - vmcr->theta)
-																					+LQR_K[1]*(0.0f - vmcr->d_theta_smooth)
-																					+LQR_K[2]*(chassis->x_set - chassis->x_filter)
-																					+LQR_K[3]*(chassis->v_set - chassis->v_filter)
+																					+LQR_K[1]*(0.0f - vmcr->d_theta)
+																					+LQR_K[2]*(chassis->x_set - chassis->x_kfilter)
+																					+LQR_K[3]*(chassis->v_set - chassis->v_kfilter)
 																					+LQR_K[4]*(0.0f - chassis->Pitch_smooth)
-																					+LQR_K[5]*(0.0f - chassis->DPitch_smooth));
+																					+LQR_K[5]*(0.0f - chassis->myPithGyro));
 	
 	//右边髋关节输出力矩				
 	vmcr->Tp=(LQR_K[6]*(0.0f - vmcr->theta)
-					+LQR_K[7]*(0.0f - vmcr->d_theta_smooth)
-					+LQR_K[8]*(chassis->x_set - chassis->x_filter)
-					+LQR_K[9]*(chassis->v_set - chassis->v_filter)
+					+LQR_K[7]*(0.0f - vmcr->d_theta)
+					+LQR_K[8]*(chassis->x_set - chassis->x_kfilter)
+					+LQR_K[9]*(chassis->v_set - chassis->v_kfilter)
 					+LQR_K[10]*(0.0f - chassis->Pitch_smooth)
-					+LQR_K[11]*(0.0f - chassis->DPitch_smooth));
+					+LQR_K[11]*(0.0f - chassis->myPithGyro));
 				
 	vmcr->T = - (vmcr->T + chassis->turn_T);	//轮毂电机输出力矩  根据电机正方向输出值取负号：
 	mySaturate(&vmcr->T, -1.0f, 1.0f);
@@ -201,11 +204,33 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 	chassis->now_roll_set = PID_Calc(&RollR_Pid,chassis->roll,chassis->roll_set);
 
 
-	vmcr->F0=10.5f/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0, chassis->leg_right_set) - chassis->now_roll_set;//前馈+pd，这里ROLL补偿的正负方向需要测试
+	vmcr->F0=10.5f/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0, chassis->leg_right_set) - chassis->now_roll_set;//前馈+pd
 //	vmcr->F0= PID_Calc(leg,vmcr->L0, chassis->leg_right_set) + chassis->now_roll_set;//测试腿长控制用
-//	jump_loop_r(chassis,vmcr,leg);
+	jump_loop_r(chassis,vmcr,leg);
 		
 	right_flag=ground_detectionR(vmcr,ins);//右腿离地检测
+	
+		//初步实现
+	if(chassis->recover_flag==0)		
+	{//倒地自起不需要检测是否离地	 
+		if(right_flag && vmcr->leg_flag==0)
+		{
+			vmcr->T = 0.0f;
+			vmcr->Tp= LQR_K[6]*(0.0f - vmcr->theta) + LQR_K[7]*(0.0f - vmcr->d_theta);
+			chassis->x_kfilter=0.0f;//对位移清零
+			chassis->x_set=chassis->x_kfilter;
+			chassis->turn_set=chassis->total_yaw;
+			vmcr->Tp = vmcr->Tp + chassis->leg_tp;
+		}
+	}
+	else if(chassis->recover_flag)
+	{
+		vmcr->Tp=0.0f;
+		chassis->leg_right_set = 0.085f;
+		vmcr->F0=10.5f/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0, chassis->leg_right_set);
+		chassis->x_kfilter=0.0f;//对位移清零
+		chassis->x_set=chassis->x_kfilter;
+	}
 //	 
 //	 if(chassis->recover_flag==0)		
 //	 {//倒地自起不需要检测是否离地	 
@@ -260,10 +285,10 @@ void jump_loop_r(chassis_t *chassis,vmc_leg_t *vmcr,PidTypeDef *leg)
 {
 	if(chassis->jump_flag == 1)
 	{
-		if(chassis->jump_status_r == 0)
+		if(chassis->jump_status_r == 0)//蹲下
 		{
-			vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,0.07f) ;//前馈+pd
-			if(vmcr->L0<0.1f)
+			vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,chassis->jump_leg - 0.01f) ;//前馈+pd
+			if(vmcr->L0 < (chassis->jump_leg - 0.01f/2))
 			{
 				chassis->jump_time_r++;
 			}
@@ -275,10 +300,10 @@ void jump_loop_r(chassis_t *chassis,vmc_leg_t *vmcr,PidTypeDef *leg)
 				chassis->jump_status_l = 1;
 			}
 		}
-		else if(chassis->jump_status_r == 1)
+		else if(chassis->jump_status_r == 1)//起跳
 		{
-			vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,0.4f) ;//前馈+pd
-			if(vmcr->L0>0.16f)
+			vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,chassis->jump_leg + 0.05f) ;//前馈+pd
+			if(vmcr->L0 > (chassis->jump_leg + 0.05f/2))
 			{
 				chassis->jump_time_r++;
 			}
@@ -290,7 +315,7 @@ void jump_loop_r(chassis_t *chassis,vmc_leg_t *vmcr,PidTypeDef *leg)
 				chassis->jump_status_l = 2;
 			}
 		}
-		else if(chassis->jump_status_r == 2)
+		else if(chassis->jump_status_r == 2)//落地
 		{
 			vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,chassis->leg_right_set) ;//前馈+pd
 			if(vmcr->L0<(chassis->leg_right_set+0.01f))
@@ -310,7 +335,7 @@ void jump_loop_r(chassis_t *chassis,vmc_leg_t *vmcr,PidTypeDef *leg)
 			vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,chassis->leg_right_set) ;//前馈+pd
 		}
 
-		if(chassis->jump_status_r == 3&&chassis->jump_status_l == 3)
+		if(chassis->jump_status_r == 3&&chassis->jump_status_l == 3)//恢复
 		{
 			chassis->jump_flag = 0;
 			chassis->jump_time_r = 0;
@@ -321,7 +346,7 @@ void jump_loop_r(chassis_t *chassis,vmc_leg_t *vmcr,PidTypeDef *leg)
 	}
 	else
 	{
-		vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,chassis->leg_right_set) - chassis->now_roll_set;//前馈+pd
+		vmcr->F0=10.5f/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0, chassis->leg_right_set) - chassis->now_roll_set;//前馈+pd
 	}
 
 }

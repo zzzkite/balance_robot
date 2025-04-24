@@ -13,9 +13,9 @@
 #define TP_PID_MAX_OUT  2.0f
 #define TP_PID_MAX_IOUT 0.0f
 
-#define TURN_PID_KP 1.0f//2.0f
+#define TURN_PID_KP 1.5f//2.0f
 #define TURN_PID_KI 0.0f 
-#define TURN_PID_KD 0.3f
+#define TURN_PID_KD 0.5f
 #define TURN_PID_MAX_OUT  1.0f//轮毂电机的额定扭矩
 #define TURN_PID_MAX_IOUT 0.0f
 
@@ -25,7 +25,7 @@
 #define ROLL_PID_MAX_OUT  100.0f//轮毂电机的额定扭矩
 #define ROLL_PID_MAX_IOUT 0.0f
 
-#define Mg 13.0f
+#define Mg 10.5f
 typedef struct
 {
 

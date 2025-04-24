@@ -31,10 +31,10 @@ float vaEstimateKF_P[4] = {1.0f, 0.0f,
                            0.0f, 1.0f};    // 后验估计协方差初始值
 
 float vaEstimateKF_Q[4] = {0.5f, 0.0f, 
-                           0.0f, 0.5f};    // Q矩阵初始值
+                           0.0f, 0.5f};    // Q矩阵，估计值协方差矩阵
 
 float vaEstimateKF_R[4] = {100.0f, 0.0f, 
-                            0.0f,  100.0f}; 	
+                            0.0f,  100.0f}; 	// R矩阵，测量值协方差矩阵
 														
 float vaEstimateKF_K[4];
 													 
@@ -48,6 +48,8 @@ extern vmc_leg_t right;
 extern vmc_leg_t left;	
 
 float vel_acc[2]; 
+float observe_aver_v;
+float observe_acceldt_v;
 uint32_t OBSERVE_TIME=3;//任务周期是3ms		
 uint32_t OBSERVE_TIME_DWT; //dwt获取的系统时间
 float OBSERVE_dt;																 
@@ -68,18 +70,21 @@ void 	Observe_task(void)
   while(1)
 	{  
 		OBSERVE_dt = DWT_GetDeltaT(&OBSERVE_TIME_DWT);//获取系统时间
+		vaEstimateKF_F[1] = OBSERVE_dt;
 		wr= -DM_6215_Motor_right.Data.Velocity - INS.Gyro[0] + right_vmc.d_alpha;//右边驱动轮转子相对大地角速度
 		vrb=wr*0.0603f+ right_vmc.L0*right_vmc.d_theta*arm_cos_f32(right_vmc.theta) + right_vmc.d_L0*arm_sin_f32(right_vmc.theta);//机体b系的速度
 		
 		wl= DM_6215_Motor_left.Data.Velocity - INS.Gyro[0] + left_vmc.d_alpha;//左边驱动轮转子相对大地角速度
 		vlb=wl*0.0603f+ left_vmc.L0*left_vmc.d_theta*arm_cos_f32(left_vmc.theta) + left_vmc.d_L0*arm_sin_f32(left_vmc.theta);//机体b系的速度
 		
-		aver_v=(vlb-vrb)/2.0f;//取平均
+		aver_v=(vlb+vrb)/2.0f;//取平均
+		observe_aver_v = aver_v;
+		observe_acceldt_v = observe_acceldt_v + INS.MotionAccel_n[1]*OBSERVE_dt;
     xvEstimateKF_Update(&vaEstimateKF,INS.MotionAccel_n[1],aver_v);
 		
 		//原地自转的过程中v_filter和x_filter应该都是为0
 		chassis_move.v_kfilter=vel_acc[0];//得到卡尔曼滤波后的速度
-		chassis_move.x_kfilter=chassis_move.x_filter+chassis_move.v_filter*OBSERVE_dt;
+		chassis_move.x_kfilter=chassis_move.x_kfilter + chassis_move.v_kfilter*OBSERVE_dt;
 		
 		//如果想直接用轮子速度，不做融合的话可以这样
 		v_origin = (-DM_6215_Motor_right.Data.Velocity + DM_6215_Motor_left.Data.Velocity)*(0.0603f)/2.0f;//0.0603是轮子半径，电机反馈的是角速度，乘半径后得到线速度，数学模型中定义的是轮子顺时针为正，所以要乘个负号

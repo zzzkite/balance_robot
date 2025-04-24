@@ -5,9 +5,9 @@
 #include "INS_task.h"
 
 #define pi 3.1415926f
-#define LEG_PID_KP  350.0f
+#define LEG_PID_KP  600.0f
 #define LEG_PID_KI  0.0f
-#define LEG_PID_KD  3000.0f
+#define LEG_PID_KD  5000.0f
 #define LEG_PID_MAX_OUT  150.0f //90ţ
 #define LEG_PID_MAX_IOUT 0.0f
 
