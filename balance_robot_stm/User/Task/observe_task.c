@@ -33,8 +33,8 @@ float vaEstimateKF_P[4] = {1.0f, 0.0f,
 float vaEstimateKF_Q[4] = {0.5f, 0.0f, 
                            0.0f, 0.5f};    // Q矩阵，估计值协方差矩阵
 
-float vaEstimateKF_R[4] = {100.0f, 0.0f, 
-                            0.0f,  100.0f}; 	// R矩阵，测量值协方差矩阵
+float vaEstimateKF_R[4] = {300.0f, 0.0f, 
+                            0.0f,  3.0f}; 	// R矩阵，测量值协方差矩阵
 														
 float vaEstimateKF_K[4];
 													 

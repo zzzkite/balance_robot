@@ -45,7 +45,7 @@ void ChassisL_task(void)
 	  osDelay(1);	
 	}	
   ChassisL_init(&chassis_move,&left_vmc,&LegL_Pid);//初始化左边两个关节电机和左边轮毂电机的id和控制模式、初始化腿部
-	OLS_Init(&DThetaL_smoother, 50);
+	OLS_Init(&DThetaL_smoother, 3);
 	while(1)
 	{	
 		CHASSL_dt = DWT_GetDeltaT(&CHASSL_TIME_DWT);//获取系统时间
@@ -184,8 +184,8 @@ void jump_loop_l(chassis_t *chassis,vmc_leg_t *vmcl,PidTypeDef *leg)
 	{
 		if(chassis->jump_status_l == 0)
 		{
-			vmcl->F0= Mg/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0,chassis->jump_leg - 0.01f) ;//前馈+pd
-			if(vmcl->L0 < (chassis->jump_leg - 0.01f/2))
+			vmcl->F0= Mg/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0,chassis->jump_leg - 0.012f) ;//前馈+pd
+			if(vmcl->L0 < (chassis->jump_leg - 0.012f/2))
 			{
 				chassis->jump_time_l++;
 			}
@@ -193,7 +193,7 @@ void jump_loop_l(chassis_t *chassis,vmc_leg_t *vmcl,PidTypeDef *leg)
 		else if(chassis->jump_status_l == 1)
 		{
 			vmcl->F0= Mg/arm_cos_f32(vmcl->theta) + PID_Calc(leg,vmcl->L0,chassis->jump_leg + 0.05f) ;//前馈+pd
-			if(vmcl->L0 > (chassis->jump_leg + 0.05f/2))
+			if(vmcl->L0 > (chassis->jump_leg + 0.05f/4))
 			{
 				chassis->jump_time_l++;
 			}

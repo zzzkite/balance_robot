@@ -32,19 +32,20 @@ float LQR_K_R[12]={
 //-2.1954,   -0.2044  , -0.8826,   -1.3245,    1.2784  ,  0.1112,
 //    2.5538,   0.2718  ,  1.5728  ,  2.2893  , 12.1973 ,   0.4578};
 float Poly_Coefficient[12][4] = {
-	{-54.685014f,	48.604706f,	-27.952208f,	-0.655745f},
-	{1.573976f,	-1.278727f,	-3.288872f,	-0.029283f},
-	{-3.773472f,	2.233087f,	-0.465090f,	-0.963770f},
-	{11.105550f,	-6.460572f,	0.868989f,	-1.804690f},
-	{-246.176773f,	158.273088f,	-39.874819f,	6.325607f},
-	{-9.934494f,	6.222431f,	-1.449025f,	0.530439f},
-	{-475.341227f,	296.953289f,	-68.284557f,	9.614812f},
-	{-28.268943f,	17.889531f,	-4.169088f,	0.693767f},
-	{-174.265660f,	111.095361f,	-26.520291f,	2.865040f},
-	{-336.399787f,	211.242491f,	-49.235196f,	5.134614f},
-	{1538.636172f,	-914.149267f,	193.497910f,	30.599852f},
-	{94.798404f,	-57.554731f,	12.685180f,	0.917877f}
+	{-53.735612f,	47.152046f,	-27.258316f,	-0.827451f},
+	{1.508363f,	-1.263672f,	-3.281688f,	-0.034952f},
+	{-2.011490f,	1.197212f,	-0.250699f,	-0.980489f},
+	{17.338411f,	-10.290784f,	1.721499f,	-1.882829f},
+	{-252.683492f,	162.219788f,	-40.614316f,	6.309073f},
+	{-10.717517f,	6.699810f,	-1.548860f,	0.535908f},
+	{-406.303023f,	254.279119f,	-58.152576f,	7.762864f},
+	{-20.680957f,	13.371284f,	-3.300214f,	0.457162f},
+	{-86.698672f,	56.152036f,	-13.664975f,	1.485071f},
+	{-172.688529f,	109.677782f,	-25.904845f,	2.687298f},
+	{1061.003947f,	-629.992329f,	133.145662f,	22.603652f},
+	{59.716635f,	-36.156122f,	7.905411f,	0.804294f}
 };
+
 
 extern vmc_leg_t left_vmc;	
 extern INS_t INS;													
@@ -182,11 +183,11 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 	chassis->leg_tp=PID_Calc(&Tp_Pid, chassis->theta_err,0.0f);//防劈叉pid计算
 	
 	vmcr->T=(LQR_K[0]*(0.0f - vmcr->theta)
-																					+LQR_K[1]*(0.0f - vmcr->d_theta)
-																					+LQR_K[2]*(chassis->x_set - chassis->x_kfilter)
-																					+LQR_K[3]*(chassis->v_set - chassis->v_kfilter)
-																					+LQR_K[4]*(0.0f - chassis->Pitch_smooth)
-																					+LQR_K[5]*(0.0f - chassis->myPithGyro));
+				   +LQR_K[1]*(0.0f - vmcr->d_theta)
+					 +LQR_K[2]*(chassis->x_set - chassis->x_kfilter)
+					 +LQR_K[3]*(chassis->v_set - chassis->v_kfilter)
+					 +LQR_K[4]*(0.0f - chassis->Pitch_smooth)
+					 +LQR_K[5]*(0.0f - chassis->myPithGyro));
 	
 	//右边髋关节输出力矩				
 	vmcr->Tp=(LQR_K[6]*(0.0f - vmcr->theta)
@@ -219,6 +220,7 @@ void chassisR_control_loop(chassis_t *chassis,vmc_leg_t *vmcr,INS_t *ins,float *
 			vmcr->Tp= LQR_K[6]*(0.0f - vmcr->theta) + LQR_K[7]*(0.0f - vmcr->d_theta);
 			chassis->x_kfilter=0.0f;//对位移清零
 			chassis->x_set=chassis->x_kfilter;
+//			chassis->v_set=0;
 			chassis->turn_set=chassis->total_yaw;
 			vmcr->Tp = vmcr->Tp + chassis->leg_tp;
 		}
@@ -287,8 +289,8 @@ void jump_loop_r(chassis_t *chassis,vmc_leg_t *vmcr,PidTypeDef *leg)
 	{
 		if(chassis->jump_status_r == 0)//蹲下
 		{
-			vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,chassis->jump_leg - 0.01f) ;//前馈+pd
-			if(vmcr->L0 < (chassis->jump_leg - 0.01f/2))
+			vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,chassis->jump_leg - 0.012f) ;//前馈+pd
+			if(vmcr->L0 < (chassis->jump_leg - 0.012f/2))
 			{
 				chassis->jump_time_r++;
 			}
@@ -303,7 +305,7 @@ void jump_loop_r(chassis_t *chassis,vmc_leg_t *vmcr,PidTypeDef *leg)
 		else if(chassis->jump_status_r == 1)//起跳
 		{
 			vmcr->F0=Mg/arm_cos_f32(vmcr->theta) + PID_Calc(leg,vmcr->L0,chassis->jump_leg + 0.05f) ;//前馈+pd
-			if(vmcr->L0 > (chassis->jump_leg + 0.05f/2))
+			if(vmcr->L0 > (chassis->jump_leg + 0.05f/4))
 			{
 				chassis->jump_time_r++;
 			}

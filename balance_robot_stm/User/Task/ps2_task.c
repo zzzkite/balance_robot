@@ -177,13 +177,13 @@ void PS2_data_move(ps2data_t *data,chassis_t *chassis,float dt)
 	
 	if(chassis_move.start_flag == 1)
 	{
-		chassis->target_v=((float)(data->ry-128))*(-0.008f);//往前大于0
-		slope_following(&chassis->target_v,&chassis->v_set,0.005f);	//	坡度跟随
+		chassis->target_v=((float)(data->ry-128))*(-0.010f);//往前大于0
+		slope_following(&chassis->target_v,&chassis->v_set,0.0040f);	//	坡度跟随
 		chassis->x_set = chassis->x_set + chassis->v_set*dt;
-		chassis->turn_set=chassis->turn_set+(data->rx-127)*(-0.00025f);//往右大于0
+		chassis->turn_set=chassis->turn_set+(data->rx-127)*(-0.00050f);//往右大于0
 	  			
 		//腿长变化
-		chassis->leg_set=chassis->leg_set+((float)(data->ly-128))*(-0.000006f);
+		chassis->leg_set=chassis->leg_set+((float)(data->ly-128))*(-0.000008f);
 		mySaturate(&chassis->leg_set,0.085f,0.2f);//腿长限幅在0.085m到0.18m之间
 		chassis->roll_target= ((float)(data->lx-127))*(0.0025f);
 		slope_following(&chassis->roll_target,&chassis->roll_set,0.0075f);

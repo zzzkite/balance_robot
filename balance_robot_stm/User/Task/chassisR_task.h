@@ -19,9 +19,9 @@
 #define TURN_PID_MAX_OUT  1.0f//轮毂电机的额定扭矩
 #define TURN_PID_MAX_IOUT 0.0f
 
-#define ROLL_PID_KP 100.0f
+#define ROLL_PID_KP 200.0f
 #define ROLL_PID_KI 0.0f 
-#define ROLL_PID_KD 5.0f
+#define ROLL_PID_KD 1000.0f
 #define ROLL_PID_MAX_OUT  100.0f//轮毂电机的额定扭矩
 #define ROLL_PID_MAX_IOUT 0.0f
 
